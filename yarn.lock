@@ -81,10 +81,10 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-strapi-pfapi@^1.1.5:
-  version "1.1.5"
-  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.1.5.tgz#f916a40e14f4b6dbcd6c7043ef02220b1bfcafff"
-  integrity sha512-Fj3V8+XDOQ9mzjdX6MLgWSG7pk2GF7m+7C9fTiEzVA+P0FTf+T+mJ7ypOuS66M/I7bSTkE54sFWZA1cw0O7TnQ==
+strapi-pfapi@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.1.6.tgz#91bb664ecc690e9ad7080ea7c6c72c16f70d5ac4"
+  integrity sha512-htWkPMUkRT3yKC2OUm/fXQ+PsDKmM3hOXWbRgF+t+LhFWihvcrkqBoaRHsNJEBkns7GDjOSaa/aoG15rETLNWg==
   dependencies:
     base-x "4.0.0"
     ioredis "5.0.6"
