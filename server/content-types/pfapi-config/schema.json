@@ -4,7 +4,7 @@
   "info": {
     "singularName": "pfapi-config",
     "pluralName": "pfapi-configs",
-    "displayName": "pfapi config"
+    "displayName": "pfapi-config"
   },
   "options": {
     "draftAndPublish": true,
