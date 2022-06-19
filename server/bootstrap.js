@@ -1,5 +1,7 @@
 'use strict';
 
+const util = require('util');
+
 const { PfapiApp } = require('strapi-pfapi');
 
 module.exports = async ({ strapi }) => {
