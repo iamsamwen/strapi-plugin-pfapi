@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Pfapi plugin uses strapi-pfapi to achieve pretty fast - single digit milliseconds on average api processing time.",
   "strapi": {
     "name": "pfapi",
