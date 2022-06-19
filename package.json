@@ -1,0 +1,27 @@
+{
+  "name": "pfapi",
+  "version": "0.0.0",
+  "description": "This is the description of the plugin.",
+  "strapi": {
+    "name": "pfapi",
+    "description": "Description of Pfapi plugin",
+    "kind": "plugin",
+    "displayName": "Pfapi"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "maintainers": [
+    {
+      "name": "A Strapi developer"
+    }
+  ],
+  "engines": {
+    "node": ">=14.19.1 <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "strapi-pfapi": "^1.1.5"
+  }
+}

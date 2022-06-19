@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pfapi_configs",
+  "info": {
+    "singularName": "pfapi-config",
+    "pluralName": "pfapi-configs",
+    "displayName": "pfapi config"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "comment": ""
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "data": {
+      "type": "json"
+    }
+  }
+}
