@@ -1,19 +1,19 @@
 {
-  "name": "pfapi",
-  "version": "0.0.0",
-  "description": "This is the description of the plugin.",
+  "name": "strapi-plugin-pfapi",
+  "version": "1.0.0",
+  "description": "Pfapi plugin uses strapi-pfapi to achieve pretty fast - single digit milliseconds on average api processing time.",
   "strapi": {
     "name": "pfapi",
-    "description": "Description of Pfapi plugin",
+    "description": "Pfapi plugin uses local and redis caches to achieve pretty fast - single digit milliseconds on average api processing time.",
     "kind": "plugin",
     "displayName": "Pfapi"
   },
   "author": {
-    "name": "A Strapi developer"
+    "name": "Sam Wen"
   },
   "maintainers": [
     {
-      "name": "A Strapi developer"
+      "name": "Sam Wen"
     }
   ],
   "engines": {
