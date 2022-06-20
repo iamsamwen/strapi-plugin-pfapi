@@ -1,6 +1,6 @@
 'use strict';
 
-const { Refreshable } = require('strapi-pfapi');
+const { Refreshable } = require('../pfapi');
 
 class FindMany extends Refreshable {
 
@@ -9,7 +9,7 @@ class FindMany extends Refreshable {
     }
 
     async get_data({uid, ...params}) {
-        //console.log(uid, params);
+        //console.log('FindMany', uid, params);
         const data = await strapi.entityService.findMany(uid, params);
         return {data};
     }
