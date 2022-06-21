@@ -1,17 +1,22 @@
 'use strict';
 
-const { Refreshable } = require('../pfapi');
+const { Refreshable, get_start_limit, get_pagination } = require('../pfapi');
 
 class FindMany extends Refreshable {
 
-    reduce({uid, fields, filters, sort, populate}) {
-        return {uid, fields, filters, sort, populate}
+    reduce({uid, fields, filters, sort, populate, ...rest}) {
+        const {start, limit} = get_start_limit(rest);
+        return {uid, fields, filters, sort, populate, start, limit}
     }
 
     async get_data({uid, ...params}) {
         //console.log('FindMany', uid, params);
         const data = await strapi.entityService.findMany(uid, params);
-        return {data};
+        const dependencies = [];
+        for (const {id} of data) {
+            dependencies.push({uid, id});
+        }
+        return {data, dependencies};
     }
 }
 

@@ -11,7 +11,8 @@ class FindOne extends Refreshable {
     async get_data({uid, id, ...params}) {
         //console.log('FindOne', uid, id, params);
         const data = await strapi.entityService.findOne(uid, id, params);
-        return {data};
+        const dependencies = [{uid, id}];
+        return {data, dependencies};
     }
 }
 

@@ -11,7 +11,8 @@ class GetCount extends Refreshable {
     async get_data({uid, ...params}) {
         //console.log('GetCount', uid, params);
         const data = await strapi.entityService.count(uid, params);
-        return {data};
+        const dependencies = [{uid}]
+        return {data, dependencies};
     }
 }
 
