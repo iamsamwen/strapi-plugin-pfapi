@@ -44,6 +44,11 @@ ioredis@5.0.6:
     redis-parser "^3.0.0"
     standard-as-callback "^2.1.0"
 
+ip-matching@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/ip-matching/-/ip-matching-2.1.2.tgz#40742c1c1d9ad9c565ad95b6ba86c9d65ee90fce"
+  integrity sha512-/ok+VhKMasgR5gvTRViwRFQfc0qYt9Vdowg6TO4/pFlDCob5ZjGPkwuOoQVCd5OrMm20zqh+1vA8KLJZTeWudg==
+
 lodash.defaults@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/lodash.defaults/-/lodash.defaults-4.2.0.tgz#d09178716ffea4dde9e5fb7b37f6f0802274580c"

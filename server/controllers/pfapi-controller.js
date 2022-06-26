@@ -13,8 +13,8 @@ module.exports = {
     const service = strapi.plugin('pfapi').service('PfapiService');
     await service.getCount(ctx);
   },
-  async getComposite(ctx) {
+  async getHandle(ctx) {
     const service = strapi.plugin('pfapi').service('PfapiService');
-    await service.getComposite(ctx);
+    await service.getHandle(ctx);
   },
 };

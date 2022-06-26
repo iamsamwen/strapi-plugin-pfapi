@@ -7,15 +7,15 @@ const get_composite = require('./get-composite');
 
 module.exports = ({ strapi }) => ({
     async findOne(ctx) {
-        await strapi.PfapiApp.handle_request(ctx, find_one);
+        await strapi.PfapiApp.handle(ctx, find_one);
     },
     async findMany(ctx) {
-        await strapi.PfapiApp.handle_request(ctx, find_many);
+        await strapi.PfapiApp.handle(ctx, find_many);
     },
     async getCount(ctx) {
-        await strapi.PfapiApp.handle_request(ctx, get_count);
+        await strapi.PfapiApp.handle(ctx, get_count);
     },
-    async getComposite(ctx) {
-        await strapi.PfapiApp.handle_request(ctx, get_composite);
+    async getHandle(ctx) {
+        await strapi.PfapiApp.handle(ctx, get_composite);
     },
 });

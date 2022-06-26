@@ -1,8 +1,8 @@
 module.exports = [
   {
     method: 'GET',
-    path: '/:model/find-one/:id',
-    handler: 'pfapiController.findOne',
+    path: '/handle/:handle',
+    handler: 'pfapiController.getHandle',
     config: {
       auth: false,
       policies: [],
@@ -10,7 +10,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/:model/find-many',
+    path: '/:handle',
     handler: 'pfapiController.findMany',
     config: {
       auth: false,
@@ -19,7 +19,7 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/:model/get-count',
+    path: '/:handle/count',
     handler: 'pfapiController.getCount',
     config: {
       auth: false,
@@ -28,8 +28,8 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/:model/get-composite',
-    handler: 'pfapiController.getComposite',
+    path: '/:handle/:id',
+    handler: 'pfapiController.findOne',
     config: {
       auth: false,
       policies: [],

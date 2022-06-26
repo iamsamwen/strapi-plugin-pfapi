@@ -1,10 +1,10 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.2.7",
-  "description": "Pfapi plugin uses strapi-pfapi to achieve pretty fast - single digit milliseconds on average api processing time.",
+  "version": "1.2.8",
+  "description": "Pfapi plugin uses local and redis caches to achieve single digit milliseconds on average api response time.",
   "strapi": {
     "name": "pfapi",
-    "description": "Pfapi plugin uses local and redis caches to achieve pretty fast - single digit milliseconds on average api processing time.",
+    "description": "Pfapi plugin uses local and redis caches to achieve single digit milliseconds on average api response time.",
     "kind": "plugin",
     "displayName": "Pretty Fast API"
   },
@@ -17,6 +17,7 @@
     }
   ],
   "dependencies": {
+    "ip-matching": "^2.1.2",
     "strapi-pfapi": "^1.3.1"
   },
   "engines": {

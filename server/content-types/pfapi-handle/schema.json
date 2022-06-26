@@ -1,23 +1,29 @@
 {
   "kind": "collectionType",
-  "collectionName": "pfapi_configs",
+  "collectionName": "pfapi_handles",
   "info": {
-    "singularName": "pfapi-config",
-    "pluralName": "pfapi-configs",
-    "displayName": "PfapiConfig"
+    "singularName": "pfapi-handle",
+    "pluralName": "pfapi-handles",
+    "displayName": "PfapiHandle"
   },
   "options": {
     "draftAndPublish": false,
     "comment": ""
   },
   "attributes": {
-    "key": {
+    "handle": {
       "type": "string",
       "required": true,
       "unique": true,
       "maxLength": 128
     },
-    "data": {
+    "uid": {
+      "type": "string"
+    },
+    "attributes": {
+      "type": "json"
+    },
+    "params": {
       "type": "json"
     },
     "comment": {

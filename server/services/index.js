@@ -1,6 +1,6 @@
 'use strict';
 
-const PfapiService = require('./pfapi-service');
+const PfapiService = require('../pfapi/services');
 
 module.exports = {
   PfapiService,
