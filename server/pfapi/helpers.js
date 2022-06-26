@@ -71,7 +71,7 @@ function get_api_uid(strapi, local_cache, handle) {
     for (const [key, value] of Object.entries(strapi.contentTypes)) {
         if (!key.startsWith('api::')) continue;
         const {info: {pluralName}} = value;
-        if (name === pluralName) {
+        if (handle === pluralName) {
             uid = key;
             local_cache.put(cache_key, uid);
             break;
