@@ -51,7 +51,7 @@ async function initialize_data(app) {
         await app.strapi.query(config_uid).createMany({data: entries});
     }
     if (process.env.DEBUG) {
-        const handles = require('./test-handles.json');
+        const handles = require('./data/handles.json');
         await app.strapi.query(handle_uid).createMany({data: handles});
     }
 }
