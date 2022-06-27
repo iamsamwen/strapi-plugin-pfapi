@@ -50,6 +50,10 @@ async function initialize_data(app) {
     if (entries.length > 0) {
         await app.strapi.query(config_uid).createMany({data: entries});
     }
+    if (process.env.DEBUG) {
+        const handles = require('./test-handles.json');
+        await app.strapi.query(handle_uid).createMany({data: handles});
+    }
 }
 
 function is_ip_matched(ctx, ips_list) {
@@ -82,10 +86,10 @@ function lifecycles(app, uid) {
     };
 }
 
-function get_params_uid(app, config) {
+function get_params_uid(app, config, handle) {
     if (config && config.uid) {
         return config.uid;
-    } else {
+    } else if (handle) {
         const cache_key = `api_uid::${handle}`;
         let uid = app.local_cache.get(cache_key);
         if (uid) {
@@ -105,11 +109,8 @@ function get_params_uid(app, config) {
     }
 }
 
-function update_params_with_id(params, id) {
-    let id_field = 'id';
-    if (isNaN(id)) {
-        id_field = config && config.text_id ? config.text_id : 'handle';
-    }
+function update_params_with_id(config, params, id) {
+    const id_field = config && config.id_field ? config.id_field : 'id';
     if (params.filters) {
         if (params.filters.$and) params.filters.$and.push({[id_field]: id})
         else params.filters[id_field] = id;

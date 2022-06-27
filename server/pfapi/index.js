@@ -46,13 +46,16 @@ class PfapiApp extends AppBase {
         this._redis_cache = new RedisCache(process.env.REDIS_URI);
 
         this.throttle = new HttpThrottle(this);
-
-        await this.update_configs();
     
         this.servers = new Servers(this);
         await this.servers.start();
 
         if (this.strapi) this.strapi.PfapiApp = this;
+
+        this.subscribe_lifecycle_events(config_uid, false);
+        this.subscribe_lifecycle_events(handle_uid, false);
+        
+        await this.update_configs();
 
         this.run_maintenance();
     }
@@ -64,11 +67,10 @@ class PfapiApp extends AppBase {
     get_params(ctx) {
 
         const params = get_params(ctx);
-
         const { handle,  id} = params;
         const config = handle ? this.get_config(handle, true) : null;
-        params.uid = helpers.get_params_uid(this, config);
-        if (id) helpers.update_params_with_id(params, id)
+        params.uid = helpers.get_params_uid(this, config, handle);
+        if (id) helpers.update_params_with_id(config, params, id)
 
         return params;
     }
@@ -123,9 +125,6 @@ class PfapiApp extends AppBase {
         this.started_at = Date.now();;
 
         this.servers.publish({action: 'keep-alive', timestamp: this.started_at, now_ms: this.started_at});
-
-        this.subscribe_lifecycle_events(config_uid, false);
-        this.subscribe_lifecycle_events(handle_uid, false);
 
         this.update_timer = setInterval(async () => {
 
@@ -245,6 +244,7 @@ class PfapiApp extends AppBase {
         const items2 = await this.strapi.query(handle_uid).findMany(query);
 
         const items = [...items1, ...items2];
+
         if (items.length > 0) {
             for (const item of items) this.update_config(item);
         } else if (!this.updated_at) {
