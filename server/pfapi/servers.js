@@ -83,6 +83,8 @@ class Servers extends RedisPubsub {
 
     update_instances(message, from) {
 
+        if (!message.timestamp) return;
+        
         let instance = {uuid: from, timestamp: message.timestamp};
 
         if (this.instances.length > 0) {

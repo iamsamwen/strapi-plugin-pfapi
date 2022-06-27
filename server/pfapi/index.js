@@ -132,7 +132,7 @@ class PfapiApp extends AppBase {
 
         this.started_at = Date.now();;
 
-        this.servers.publish({action: 'keep-alive', now_ms: this.started_at});
+        this.servers.publish({action: 'keep-alive', timestamp: this.started_at, now_ms: this.started_at});
 
         this.subscribe_lifecycle_events(config_uid, false);
         this.subscribe_lifecycle_events(handle_uid, false);
