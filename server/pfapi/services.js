@@ -3,7 +3,7 @@
 const find_one = require('./find-one');
 const find_many = require('./find-many');
 const get_count = require('./get-count');
-const get_composite = require('./get-composite');
+const get_compose = require('./get-compose');
 
 module.exports = ({ strapi }) => ({
     async findOne(ctx) {
@@ -15,7 +15,7 @@ module.exports = ({ strapi }) => ({
     async getCount(ctx) {
         await strapi.PfapiApp.handle(ctx, get_count);
     },
-    async getHandle(ctx) {
-        await strapi.PfapiApp.handle(ctx, get_composite);
+    async getCompose(ctx) {
+        await strapi.PfapiApp.handle(ctx, get_compose);
     },
 });

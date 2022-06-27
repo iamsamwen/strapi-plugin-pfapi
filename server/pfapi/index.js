@@ -62,11 +62,24 @@ class PfapiApp extends AppBase {
     }
 
     get_params(ctx) {
-        const params = get_params(ctx);        
+
+        const params = get_params(ctx);
+
         if (params.handle) {
             const uid = helpers.get_api_uid(this.strapi, this.local_cache, params.handle);
             if (uid) params.uid = uid;
         }
+
+        if (params.id) {
+            const id = params.id;
+            if (params.filters) {
+                if (params.filters.$and) params.filters.$and.push({id})
+                else params.filters.id = id;
+            } else {
+                params.filters = {id};
+            }
+        }
+
         return params;
     }
 

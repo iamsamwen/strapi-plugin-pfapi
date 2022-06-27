@@ -9,17 +9,19 @@ class FindOne extends Refreshable {
         if (process.env.DEBUG) {
             console.log('FindOne reduce', util.inspect(params, false, null, true));
         }
-        const {uid, id, fields, populate} = params;
-        return {uid, id, fields, populate}
+        let {uid, fields, filters, populate} = params;
+        return {uid, fields, filters, populate, limit: 1}
     }
 
     async get_data({uid, id, ...params}) {
         if (process.env.DEBUG) {
-            console.log('FindOne get_data', uid, id, util.inspect(params, false, null, true));
+            console.log('FindOne get_data', uid,  util.inspect(params, false, null, true));
         }
         if (!uid) return null;
-        const data = await strapi.entityService.findOne(uid, id, params);
-        const dependencies = [{uid, id}];
+        let data = await strapi.entityService.findMany(uid, params);
+        if (data.length === 0) return null;
+        data = data[0];
+        const dependencies = [{uid, id: data.id}];
         return {data, dependencies};
     }
 }

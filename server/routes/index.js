@@ -1,8 +1,8 @@
 module.exports = [
   {
     method: 'GET',
-    path: '/handle/:handle',
-    handler: 'pfapiController.getHandle',
+    path: '/compose/:handle',
+    handler: 'pfapiController.getCompose',
     config: {
       auth: false,
       policies: [],

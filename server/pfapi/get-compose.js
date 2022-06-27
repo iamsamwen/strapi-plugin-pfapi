@@ -6,7 +6,7 @@ const { Composite, get_pagination } = require('../pfapi');
 const find_many = require('./find-many');
 const get_count = require('./get-count');
 
-class GetComposite extends Composite {
+class GetCompose extends Composite {
 
     items = find_many;
 
@@ -22,4 +22,4 @@ class GetComposite extends Composite {
     }
 }
 
-module.exports = new GetComposite();
+module.exports = new GetCompose();
