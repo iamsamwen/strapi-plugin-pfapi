@@ -2,6 +2,8 @@
 
 module.exports = {
 
+    maintenance_interval: 10000,
+    
     config_update_interval: 1800000,
 
     rate_limits: [
