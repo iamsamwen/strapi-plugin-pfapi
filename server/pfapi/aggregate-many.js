@@ -14,7 +14,7 @@ class AggregateMany extends Composite {
 
     transform(data, params) {
         if (process.env.DEBUG) {
-            console.log('transform transform', util.inspect(params, false, null, true));
+            console.log('AggregateMany transform', util.inspect(params, false, null, true));
         }
         data.pagination = get_pagination({...params, total: data.total });
         delete data.total;

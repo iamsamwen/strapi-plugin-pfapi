@@ -11,7 +11,7 @@ class AggregateOne extends Composite {
 
     transform(data, params) {
         if (process.env.DEBUG) {
-            console.log('transform transform', util.inspect(params, false, null, true));
+            console.log('AggregateOne transform', util.inspect(params, false, null, true));
         }
     }
 }
