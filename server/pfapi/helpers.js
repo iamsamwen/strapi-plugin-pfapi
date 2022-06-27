@@ -20,10 +20,10 @@ module.exports = {
     initialize_data,
 
     is_ip_matched,
-    get_api_uid,
     get_item_config_key,
-
     lifecycles,
+    get_params_uid,
+    update_params_with_id
 };
 
 function normalize_data({key, data = {}, ...rest}) {
@@ -61,25 +61,6 @@ function is_ip_matched(ctx, ips_list) {
     return false;
 }
 
-function get_api_uid(strapi, local_cache, handle) {
-    const config_key = get_config_key(handle, true);
-    let { uid } = local_cache.get(config_key) || {};
-    if (uid) return uid;
-    const cache_key = `api_uid::${handle}`;
-    uid = local_cache.get(cache_key);
-    if (uid) return uid;
-    for (const [key, value] of Object.entries(strapi.contentTypes)) {
-        if (!key.startsWith('api::')) continue;
-        const {info: {pluralName}} = value;
-        if (handle === pluralName) {
-            uid = key;
-            local_cache.put(cache_key, uid);
-            break;
-        }
-    }
-    return uid;
-}
-
 function get_item_config_key({key, handle} = {}) {
     if (key) return get_config_key(key, false);
     if (handle) return get_config_key(handle, true);
@@ -99,4 +80,40 @@ function lifecycles(app, uid) {
             app.after_delete(event);
         },
     };
+}
+
+function get_params_uid(app, config) {
+    if (config && config.uid) {
+        return config.uid;
+    } else {
+        const cache_key = `api_uid::${handle}`;
+        let uid = app.local_cache.get(cache_key);
+        if (uid) {
+            return uid;     
+        } else {
+            for (const [key, value] of Object.entries(app.strapi.contentTypes)) {
+                if (!key.startsWith('api::')) continue;
+                const {info: {pluralName}} = value;
+                if (handle === pluralName) {
+                    uid = key;
+                    app.local_cache.put(cache_key, uid);
+                    break;
+                }
+            }
+            return uid;
+        }
+    }
+}
+
+function update_params_with_id(params, id) {
+    let id_field = 'id';
+    if (isNaN(id)) {
+        id_field = config && config.text_id ? config.text_id : 'handle';
+    }
+    if (params.filters) {
+        if (params.filters.$and) params.filters.$and.push({[id_field]: id})
+        else params.filters[id_field] = id;
+    } else {
+        params.filters = {[id_field]: id};
+    }
 }

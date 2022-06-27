@@ -20,6 +20,9 @@
     "uid": {
       "type": "string"
     },
+    "id_field": {
+      "type": "string"
+    },
     "attributes": {
       "type": "json"
     },

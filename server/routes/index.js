@@ -19,8 +19,17 @@ module.exports = [
   },
   {
     method: 'GET',
-    path: '/:handle/compose',
-    handler: 'pfapiController.getCompose',
+    path: '/:handle/aggregate',
+    handler: 'pfapiController.aggregateMany',
+    config: {
+      auth: false,
+      policies: [],
+    },
+  },
+  {
+    method: 'GET',
+    path: '/:handle/aggregate/:id',
+    handler: 'pfapiController.aggregateOne',
     config: {
       auth: false,
       policies: [],
