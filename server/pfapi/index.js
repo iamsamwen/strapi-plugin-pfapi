@@ -1,7 +1,7 @@
 'use strict';
 
-const pfapi = require('/Users/sam/iamsamwen/strapi-pfapi/src');
-//const pfapi = require('strapi-pfapi');
+//const pfapi = require('/Users/sam/iamsamwen/strapi-pfapi/src');
+const pfapi = require('strapi-pfapi');
 
 module.exports = {
     ...pfapi
@@ -115,10 +115,6 @@ class PfapiApp extends AppBase {
         entries.push({key: this.constructor.name, data: require('./default-config')})
         if (entries.length > 0) {
             await this.strapi.query(config_uid).createMany({data: entries});
-        }
-        if (process.env.DEBUG) {
-            const handles = require('./data/handles.json');
-            await this.strapi.query(handle_uid).createMany({data: handles});
         }
     }
 }
