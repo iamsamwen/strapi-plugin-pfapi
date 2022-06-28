@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.5.1",
+  "version": "1.5.3",
   "description": "Pfapi plugin uses local and redis caches to achieve single digit milliseconds on average api response time.",
   "strapi": {
     "name": "pfapi",
@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "ip-matching": "^2.1.2",
-    "strapi-pfapi": "^1.5.0"
+    "strapi-pfapi": "^1.5.3"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
