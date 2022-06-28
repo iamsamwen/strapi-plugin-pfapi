@@ -22,4 +22,7 @@ module.exports = ({ strapi }) => ({
     async aggregateMany(ctx) {
         await strapi.PfapiApp.handle(ctx, aggregate_many);
     },
+    async listCaches(ctx) {
+        await strapi.PfapiApp.list_caches(ctx);
+    }
 });

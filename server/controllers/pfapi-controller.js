@@ -21,4 +21,8 @@ module.exports = {
     const service = strapi.plugin('pfapi').service('PfapiService');
     await service.aggregateOne(ctx);
   },
+  async listCaches(ctx) {
+    const service = strapi.plugin('pfapi').service('PfapiService');
+    await service.listCaches(ctx);
+  }
 };

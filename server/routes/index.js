@@ -1,6 +1,15 @@
 module.exports = [
   {
     method: 'GET',
+    path: '/list-caches',
+    handler: 'pfapiController.listCaches',
+    config: {
+      auth: false,
+      policies: [],
+    },
+  },
+  {
+    method: 'GET',
     path: '/:handle',
     handler: 'pfapiController.findMany',
     config: {

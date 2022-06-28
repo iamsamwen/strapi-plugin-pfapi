@@ -1,7 +1,7 @@
 'use strict';
 
-const pfapi = require('/Users/sam/iamsamwen/strapi-pfapi/src');
-//const pfapi = require('strapi-pfapi');
+//const pfapi = require('/Users/sam/iamsamwen/strapi-pfapi/src');
+const pfapi = require('strapi-pfapi');
 
 module.exports = {
     ...pfapi
@@ -24,15 +24,16 @@ class PfapiApp extends AppBase {
 
     is_white_listed(ctx) {
         if (this.config.white_ips_list) {
-            const white_ips_list = this.app.config.white_ips_list;
-            return is_ip_matched(ctx, white_ips_list);
+            return is_ip_matched(ctx, this.app.config.white_ips_list);
         }
         return false;
     }
 
     is_blocked(ctx) {
-        const block_ips_list = this.config.block_ips_list;
-        return is_ip_matched(ctx, block_ips_list);
+        if (this.config.block_ips_list) {
+            return is_ip_matched(ctx, this.config.block_ips_list);
+        }
+        return false;
     }
 
     throttle_pattern(ctx) {
