@@ -7,7 +7,7 @@ module.exports = {
     ...pfapi
 }
 
-const { AppBase, get_config_key, is_ip_matched, get_item_config_key, normalize_data } = module.exports;
+const { AppBase, get_config_key, is_ip_matched, get_item_config_key, normalize_data, default_configs } = module.exports;
 
 const default_config = require('./default-config');
 
