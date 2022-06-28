@@ -44,7 +44,7 @@ ioredis@5.0.6:
     redis-parser "^3.0.0"
     standard-as-callback "^2.1.0"
 
-ip-matching@^2.1.2:
+ip-matching@2.1.2, ip-matching@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/ip-matching/-/ip-matching-2.1.2.tgz#40742c1c1d9ad9c565ad95b6ba86c9d65ee90fce"
   integrity sha512-/ok+VhKMasgR5gvTRViwRFQfc0qYt9Vdowg6TO4/pFlDCob5ZjGPkwuOoQVCd5OrMm20zqh+1vA8KLJZTeWudg==
@@ -86,13 +86,14 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-strapi-pfapi@^1.3.3:
-  version "1.3.3"
-  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.3.3.tgz#47b92d9e98a7fd4ad26d2a41c9e864df9a2051c7"
-  integrity sha512-9GsFe2GUJf4YBJVjZsc2/9CQRlIdTkhShUTrVBzLRnCllAMGy/+Svnc1HczjZgIdTROA42U4rIulnWQJH7A20A==
+strapi-pfapi@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.5.0.tgz#e9bbdde286553c958254625c24cad3551ce6a1a7"
+  integrity sha512-fHxhdNQbPDphTPXhcRiFHy74ikp1ht5E1f1j7nWpayjQVt/DA9nTt+ZygIJMzGHfbMeI8fONdOZzQ7x9tLYdSQ==
   dependencies:
     base-x "4.0.0"
     ioredis "5.0.6"
+    ip-matching "2.1.2"
     lodash "4.17.21"
     uuid "8.3.2"
 
