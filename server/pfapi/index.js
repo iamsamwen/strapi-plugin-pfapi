@@ -7,7 +7,7 @@ module.exports = {
     ...pfapi
 }
 
-const { AppBase, get_config_key, is_ip_matched, get_item_config_key, normalize_data, default_configs } = module.exports;
+const { AppBase, is_ip_matched } = module.exports;
 
 const default_config = require('./default-config');
 
@@ -76,14 +76,9 @@ class PfapiApp extends AppBase {
     }
 
     async initialize_data() {
-        const entries = [];
-        for (const [key, data] of Object.entries(default_configs)) {
-            entries.push({key, data});
-        }
-        entries.push({key: this.constructor.name, data: require('./default-config')})
-        if (entries.length > 0) {
-            await this.strapi.query(config_uid).createMany({data: entries});
-        }
+        await AppBase.prototype.initialize_data();
+        const data = {key: this.constructor.name, data: require('./default-config')};
+        await this.strapi.query(config_uid).createOne({data});
     }
 }
 

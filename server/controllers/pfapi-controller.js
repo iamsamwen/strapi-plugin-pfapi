@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+  // for pfapi 
   async findOne(ctx) {
     const service = strapi.plugin('pfapi').service('PfapiService');
     await service.findOne(ctx);
@@ -21,8 +22,9 @@ module.exports = {
     const service = strapi.plugin('pfapi').service('PfapiService');
     await service.aggregateOne(ctx);
   },
-  async listCaches(ctx) {
+  // for development and debug
+  async handleCacheRequest(ctx) {
     const service = strapi.plugin('pfapi').service('PfapiService');
-    await service.listCaches(ctx);
+    await service.handleCacheRequest(ctx);
   }
 };

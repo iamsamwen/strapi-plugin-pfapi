@@ -1,13 +1,19 @@
 module.exports = [
+  /**
+   * routes available for development and debug
+   */
   {
     method: 'GET',
-    path: '/list-caches',
-    handler: 'pfapiController.listCaches',
+    path: '/cache/:type/:key',
+    handler: 'pfapiController.handleCacheRequest',
     config: {
       auth: false,
       policies: [],
     },
   },
+  /**
+   * routes for pfapi
+   */
   {
     method: 'GET',
     path: '/:handle',
