@@ -57,22 +57,9 @@ class PfapiApp extends AppBase {
         }
     }
 
-    async update_configs() {
-
-        if (!this.strapi) return;
-
-        const items1 = await this.strapi.db.query(config_uid).findMany();
-        const items2 = await this.strapi.db.query(handle_uid).findMany();
-
-        const items = [...items1, ...items2];
-
-        if (items.length > 0) {
-            for (const item of items) this.update_config(item);
-        } else {
-            await this.initialize_data();
-            const data = {key: this.constructor.name, data: require('./default-config')};
-            await this.strapi.db.query(this.config_uid).create({data});
-        }
+    async initialize_data() {
+        const data = {key: this.constructor.name, data: require('./default-config')};
+        await this.strapi.db.query(this.config_uid).create({data});
     }
 }
 
