@@ -41,7 +41,7 @@ yarn develop
 
 ```
 
-![Admin Panel](https://github.com/iamsamwen/strapi-pfapi-plugin/blob/main/images/screen-shot1.png)
+![Admin Panel](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot1.png)
 
 ### step 5 test pfapi
 
