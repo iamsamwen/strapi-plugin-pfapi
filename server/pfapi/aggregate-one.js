@@ -1,7 +1,7 @@
 'use strict';
 
 const util = require('util');
-const { Composite } = require('../pfapi');
+const { Composite } = require('./');
 
 const find_one = require('./find-one');
 

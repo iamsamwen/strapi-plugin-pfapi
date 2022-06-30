@@ -1,7 +1,7 @@
 'use strict';
 
 const util = require('util');
-const { Composite, get_pagination } = require('../pfapi');
+const { Composite, get_pagination } = require('./');
 
 const find_many = require('./find-many');
 const get_count = require('./get-count');

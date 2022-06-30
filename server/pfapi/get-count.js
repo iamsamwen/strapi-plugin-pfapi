@@ -1,7 +1,7 @@
 'use strict';
 
 const util = require('util');
-const { Refreshable } = require('../pfapi');
+const { Refreshable } = require('./');
 
 class GetCount extends Refreshable {
 
