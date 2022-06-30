@@ -3,5 +3,6 @@
 const { PfapiApp } = require('./pfapi');
 
 module.exports = async ({ strapi }) => {
-  await new PfapiApp(strapi).start();
+  const pfapi = new PfapiApp(strapi);
+  await pfapi.start();
 };

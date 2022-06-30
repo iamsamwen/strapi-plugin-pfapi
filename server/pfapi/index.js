@@ -17,9 +17,7 @@ const handle_uid = 'plugin::pfapi.pfapi-handle';
 class PfapiApp extends AppBase {
 
     constructor(strapi) {
-        super(config_uid, handle_uid);
-        this.strapi = strapi;
-        this.config = default_config;
+        super(strapi, default_config, config_uid, handle_uid);
     }
 
     is_white_listed(ctx) {
@@ -76,9 +74,9 @@ class PfapiApp extends AppBase {
     }
 
     async initialize_data() {
-        await AppBase.prototype.initialize_data();
+        await AppBase.prototype.initialize_data.call(this);
         const data = {key: this.constructor.name, data: require('./default-config')};
-        await this.strapi.query(config_uid).createOne({data});
+        await this.strapi.query(this.config_uid).createOne({data});
     }
 }
 
