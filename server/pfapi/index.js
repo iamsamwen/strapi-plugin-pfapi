@@ -70,13 +70,9 @@ class PfapiApp extends AppBase {
             for (const item of items) this.update_config(item);
         } else {
             await this.initialize_data();
+            const data = {key: this.constructor.name, data: require('./default-config')};
+            await this.strapi.query(this.config_uid).createOne({data});
         }
-    }
-
-    async initialize_data() {
-        await AppBase.prototype.initialize_data.call(this);
-        const data = {key: this.constructor.name, data: require('./default-config')};
-        await this.strapi.query(this.config_uid).createOne({data});
     }
 }
 
