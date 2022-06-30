@@ -61,8 +61,8 @@ class PfapiApp extends AppBase {
 
         if (!this.strapi) return;
 
-        const items1 = await this.strapi.query(config_uid).findMany();
-        const items2 = await this.strapi.query(handle_uid).findMany();
+        const items1 = await this.strapi.db.query(config_uid).findMany();
+        const items2 = await this.strapi.db.query(handle_uid).findMany();
 
         const items = [...items1, ...items2];
 
@@ -71,7 +71,7 @@ class PfapiApp extends AppBase {
         } else {
             await this.initialize_data();
             const data = {key: this.constructor.name, data: require('./default-config')};
-            await this.strapi.query(this.config_uid).createOne({data});
+            await this.strapi.db.query(this.config_uid).create({data});
         }
     }
 }
