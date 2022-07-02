@@ -17,6 +17,7 @@
     }
   ],
   "dependencies": {
+    "fs-extra": "^10.1.0",
     "ip-matching": "^2.1.2",
     "strapi-pfapi": "^1.6.7"
   },

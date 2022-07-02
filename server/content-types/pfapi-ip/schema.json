@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pfapi_ips",
+  "info": {
+    "singularName": "pfapi-ip",
+    "pluralName": "pfapi-ips",
+    "displayName": "PfapiIp"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ip": {
+      "type": "string",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "white-list",
+        "black-list"
+      ]
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}

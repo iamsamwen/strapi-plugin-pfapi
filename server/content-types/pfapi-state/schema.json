@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "pfapi_states",
+  "info": {
+    "singularName": "pfapi-state",
+    "pluralName": "pfapi-states",
+    "displayName": "PfapiStates"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "lifecycle_uids": {
+      "type": "json"
+    }
+  }
+}

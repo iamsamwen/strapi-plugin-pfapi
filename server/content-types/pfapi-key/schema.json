@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pfapi_keys",
+  "info": {
+    "singularName": "pfapi-key",
+    "pluralName": "pfapi-keys",
+    "displayName": "PfapiKey"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "key": {
+      "type": "string"
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "comment": {
+      "type": "string"
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    }
+  }
+}

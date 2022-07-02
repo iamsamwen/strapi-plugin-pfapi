@@ -7,7 +7,7 @@
     "displayName": "PfapiHandle"
   },
   "options": {
-    "draftAndPublish": false,
+    "draftAndPublish": true,
     "comment": ""
   },
   "attributes": {
@@ -24,7 +24,17 @@
       "type": "string"
     },
     "attributes": {
-      "type": "json"
+      "type": "dynamiczone",
+      "components": [
+        "pfapi-types.bool",
+        "pfapi-types.decimal",
+        "pfapi-types.integer",
+        "pfapi-types.json",
+        "pfapi-types.media",
+        "pfapi-types.medias",
+        "pfapi-types.richtext",
+        "pfapi-types.text"
+      ]
     },
     "params": {
       "type": "json"

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pfapi_rate_limits",
+  "info": {
+    "singularName": "pfapi-rate-limit",
+    "pluralName": "pfapi-rate-limits",
+    "displayName": "PfapiRateLimit"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "ip_mask": {
+      "type": "string",
+      "default": "255.255.255.255",
+      "required": true
+    },
+    "prefix": {
+      "type": "string"
+    },
+    "window_secs": {
+      "type": "integer",
+      "required": true,
+      "min": 10
+    },
+    "max_count": {
+      "type": "integer",
+      "min": 10,
+      "required": true
+    },
+    "block_secs": {
+      "type": "integer",
+      "min": 30
+    },
+    "comment": {
+      "type": "string"
+    }
+  }
+}

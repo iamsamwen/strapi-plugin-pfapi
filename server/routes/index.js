@@ -7,8 +7,7 @@ module.exports = [
     path: '/cache/:type/:key',
     handler: 'pfapiController.handleCacheRequest',
     config: {
-      auth: false,
-      policies: [],
+      auth: false
     },
   },
   /**
@@ -20,7 +19,6 @@ module.exports = [
     handler: 'pfapiController.findMany',
     config: {
       auth: false,
-      policies: [],
     },
   },
   {
@@ -29,7 +27,6 @@ module.exports = [
     handler: 'pfapiController.getCount',
     config: {
       auth: false,
-      policies: [],
     },
   },
   {
@@ -38,7 +35,6 @@ module.exports = [
     handler: 'pfapiController.aggregateMany',
     config: {
       auth: false,
-      policies: [],
     },
   },
   {
@@ -46,8 +42,7 @@ module.exports = [
     path: '/:handle/aggregate/:id',
     handler: 'pfapiController.aggregateOne',
     config: {
-      auth: false,
-      policies: [],
+      auth: false
     },
   },
   {

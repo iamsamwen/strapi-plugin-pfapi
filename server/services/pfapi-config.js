@@ -4,6 +4,6 @@
  *  service.
  */
 
-const { createCoreService } = require('@strapi/strapi').factories;
+// const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('plugin::pfapi.pfapi-config');
+// module.exports = createCoreService('plugin::pfapi.pfapi-config');

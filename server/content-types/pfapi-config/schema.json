@@ -18,7 +18,14 @@
       "maxLength": 128
     },
     "data": {
-      "type": "json"
+      "type": "dynamiczone",
+      "components": [
+        "pfapi-types.bool",
+        "pfapi-types.decimal",
+        "pfapi-types.integer",
+        "pfapi-types.json",
+        "pfapi-types.text"
+      ]
     },
     "comment": {
       "type": "string"

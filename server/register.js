@@ -1,5 +1,7 @@
 'use strict';
 
+const { install_types } = require('./pfapi');
+
 module.exports = ({ strapi }) => {
-  // registeration phase
+    install_types(strapi);
 };
