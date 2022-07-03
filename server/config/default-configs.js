@@ -105,6 +105,6 @@ module.exports = {
 
     DemoRole: {name: 'PfapiDemo', description: 'Pfapi demo role', type: 'pfapidemo'},
 
-    DemoKey: {key: 'Pfapi-Demo', blocked: false, comment: 'demo and test key', role: 'PfapiDemo' },
+    DemoKey: {key: 'Pfapi-Demo', name: 'pfapi', blocked: false, comment: 'demo and test key', role: 'PfapiDemo' },
 
 };
