@@ -92,6 +92,11 @@ ms@2.1.2:
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.2.tgz#d09d1f357b443f493382a8eb3ccd183872ae6009"
   integrity sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
 
+netmask@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/netmask/-/netmask-2.0.2.tgz#8b01a07644065d536383835823bc52004ebac5e7"
+  integrity sha512-dBpDMdxv9Irdq66304OLfEmQ9tbNRFnFTuZiLo+bD+r332bBmMJ8GBLXklIXXgxd3+v9+KUnZaUR5PJMa75Gsg==
+
 redis-errors@^1.0.0, redis-errors@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/redis-errors/-/redis-errors-1.2.0.tgz#eb62d2adb15e4eaf4610c04afe1529384250abad"
@@ -109,15 +114,17 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-strapi-pfapi@^1.6.7:
-  version "1.6.7"
-  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.6.7.tgz#dc199e4ab6a675c1dd71e58c02f3285bb14d9bcd"
-  integrity sha512-ZsiMmOs7kGsCDwzaVweuzfGeOM+cpSpSU5+6eZpjqMPB4BryepDY4zv72p4XZVKY+wz0XHJXXmFvrU4e82l9lg==
+strapi-pfapi@^1.6.9:
+  version "1.6.9"
+  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.6.9.tgz#a0f8c56c05e14318edad5f5a528216b0f0310daa"
+  integrity sha512-KRebUeAiiRx9/Z1JAn8TGvAC36An8Zd2gkALehU0rvKcho1qf33y44dhHCEhavgWSZV9fbjCWp7uLdUG822woQ==
   dependencies:
     base-x "4.0.0"
+    fs-extra "^10.1.0"
     ioredis "5.0.6"
     ip-matching "2.1.2"
     lodash "4.17.21"
+    netmask "^2.0.2"
     uuid "8.3.2"
 
 universalify@^2.0.0:

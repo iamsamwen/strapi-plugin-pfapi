@@ -89,7 +89,7 @@ module.exports = {
 
         maintenance_interval: 10000,
         
-        config_sync_interval: 3600000,
+        sync_interval: 3600000,
     
         proxy: true
     },

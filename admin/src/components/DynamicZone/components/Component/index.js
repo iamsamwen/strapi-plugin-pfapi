@@ -58,6 +58,7 @@ const Component = ({
 }) => {
   const { formatMessage } = useIntl();
   const { getComponentLayout } = useContentTypeLayout();
+  // start to replace
   const { modifiedData } = useCMEditViewDataManager();
   const { icon, friendlyName } = useMemo(() => {
     const {
@@ -66,19 +67,20 @@ const Component = ({
     let text = '';
     if (!isOpen && modifiedData && modifiedData[name] && index < modifiedData[name].length) {
       const item = modifiedData[name][index];
-      if (['json', 'richtext', 'media', 'medias'].includes(displayName)) {
-        text = text = `${item.name}: (${displayName})`;
-      } else {
-        let val = String(item.value);
-        if (val.length > 35) val = val.slice(0, 32) + '...';
-        text = `${item.name}: ${val}`;
+      if (item.name && (item.value || item.media)) {
+        if (['json', 'richtext', 'media', 'multimedia'].includes(displayName)) {
+          text = text = `${item.name}: (${displayName})`;
+        } else {
+          let val = String(item.value);
+          if (val.length > 38) val = val.slice(0, 35) + '...';
+          text = `${item.name}: ${val}`;
+        }
       }
-    } else {
-      text = displayName;
     }
+    if (!text) text = displayName;
     return { friendlyName: text, icon };
   }, [componentUid, getComponentLayout, modifiedData, isOpen]);
-
+  // end of replacement
   const handleMoveComponentDown = () => moveComponentDown(name, index);
 
   const handleMoveComponentUp = () => moveComponentUp(name, index);
