@@ -26,14 +26,14 @@
     "attributes": {
       "type": "dynamiczone",
       "components": [
+        "pfapi-types.text",
+        "pfapi-types.richtext",
+        "pfapi-types.media",
+        "pfapi-types.multimedia",
+        "pfapi-types.json",
         "pfapi-types.bool",
         "pfapi-types.decimal",
-        "pfapi-types.integer",
-        "pfapi-types.json",
-        "pfapi-types.media",
-        "pfapi-types.medias",
-        "pfapi-types.richtext",
-        "pfapi-types.text"
+        "pfapi-types.integer"
       ]
     },
     "params": {
