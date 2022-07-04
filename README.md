@@ -1,6 +1,6 @@
 # Strapi plugin pfapi
 
-Pfapi plugin uses local and redis caches to achieve single digit milliseconds on average api response time.
+Pfapi plugin provides configurable and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time.
 
 ## how to use
 

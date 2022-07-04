@@ -1,12 +1,12 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.7.8",
-  "description": "Pfapi plugin uses local and redis caches to achieve single digit milliseconds on average api response time.",
+  "version": "1.8.0",
+  "description": "Pfapi plugin provides configurable and fast API services.",
   "strapi": {
     "name": "pfapi",
-    "description": "Pfapi plugin uses local and redis caches to achieve single digit milliseconds on average api response time.",
+    "description": "Pfapi plugin provides configurable and fast API services.",
     "kind": "plugin",
-    "displayName": "Pretty Fast API"
+    "displayName": "Pfapi"
   },
   "author": {
     "name": "Sam Wen"
@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "fs-extra": "^10.1.0",
-    "strapi-pfapi": "^1.7.8"
+    "strapi-pfapi": "^1.7.9"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
