@@ -158,9 +158,9 @@ to see if the cached data evicted and updated
 
 goto
 
-http://localhost:1337/admin/content-manager/collectionType/plugin::pfapi.pfapi-handle/6
+http://localhost:1337/admin/content-manager/collectionType/plugin::pfapi.pfapi-handle/1
 
-make some change, for example: remove iso3 from the fields array
+make some change, for example: add country to the fields array
 
 check APIs:
 
