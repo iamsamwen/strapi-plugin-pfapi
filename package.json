@@ -19,7 +19,7 @@
   "dependencies": {
     "fs-extra": "^10.1.0",
     "ip-matching": "^2.1.2",
-    "strapi-pfapi": "^1.7.6"
+    "strapi-pfapi": "^1.7.7"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
