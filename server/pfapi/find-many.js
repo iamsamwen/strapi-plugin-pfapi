@@ -9,12 +9,12 @@ class FindMany extends Refreshable {
         if (process.env.DEBUG) {
             console.log('FindMany reduce', util.inspect(params, false, null, true));
         }
-        const {uid, fields, filters, sort, populate, ...rest} = params;
+        const {uid, fields, filters, sort, populate, delay, ...rest} = params;
         const {start, limit} = get_start_limit(rest);
-        return {uid, fields, filters, sort, populate, start, limit}
+        return {uid, fields, filters, sort, populate, delay, start, limit}
     }
 
-    async get_data({uid, ...params}) {
+    async get_data({uid, delay, ...params}) {
         if (process.env.DEBUG) {
             console.log('FindMany get_data', uid, util.inspect(params, false, null, true));
         }
@@ -23,6 +23,9 @@ class FindMany extends Refreshable {
         const dependencies = [];
         for (const {id} of data) {
             dependencies.push({uid, id});
+        }
+        if (delay) {
+            await new Promise(resolve => setTimeout(resolve, delay));
         }
         return {data, dependencies};
     }

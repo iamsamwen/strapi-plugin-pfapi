@@ -91,6 +91,8 @@ module.exports = {
         
         sync_interval: 3600000,
     
+        send_response_time: true,
+        
         proxy: true
     },
 
