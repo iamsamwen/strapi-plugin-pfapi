@@ -31,7 +31,7 @@ module.exports = async (strapi) => {
         }
         
     }
-    console.log({root});
+
     if (!fs.existsSync(node_path.join(root, 'src', 'admin'))) {
         console.log('not a strapi project root');
         return;
