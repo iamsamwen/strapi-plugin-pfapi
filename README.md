@@ -2,6 +2,8 @@
 
 Pfapi plugin provides configurable and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time.
 
+![components and dynamic zone](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot2.png)
+
 ## how to use
 
 The plugin uses the <a href="https://github.com/iamsamwen/strapi-pfapi">strapi-pfapi library</a>. With the world cities test data set provided by plugin strapi-plugin-pfapi-data, we can run a few API calls to demonstrate the idea.
@@ -74,29 +76,6 @@ http://localhost:1337/pfapi/world-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 config data defined in PfapiHandles for handle **northern-cities**:
 
-```json
-{
-    "handle": "northern-cities",
-    "uid": "api::world-city.world-city",
-    "attributes": {
-        "title": "Northern Cities"
-    },
-    "params": {
-        "filters": {
-            "lat": {
-                "$gt": 50
-            }
-        },
-        "fields": [
-            "name",
-            "lat",
-            "lng",
-            "population"
-        ]
-    }
-}
-```
-
 http://localhost:1337/pfapi/northern-cities?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
@@ -109,30 +88,6 @@ http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 ### c) tests with config handle northern-city with id_field is name
 
 config data defined in PfapiHandles for handle **northern-city**:
-
-```json
-{
-    "handle": "northern-city",
-    "uid": "api::world-city.world-city",
-    "attributes": {
-        "title": "One Northern City"
-    },
-    "id_field": "name",
-    "params": {
-        "filters": {
-            "lat": {
-                "$gt": 50
-            }
-        },
-        "fields": [
-            "name",
-            "lat",
-            "lng",
-            "population"
-        ]
-    }
-}
-```
 
 http://localhost:1337/pfapi/pf/northern-city/Anchorage?api_key=Pfapi-Demo-XXXXXXXX
 
@@ -167,3 +122,34 @@ check APIs:
 http://localhost:1337/pfapi/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
+
+## config redis uri
+
+By default if environment variable **REDIS_URI** is not set, it use redis://localhost/0.
+
+You can set it to a different host and database number by providing **REDIS_URI**.
+
+here is an example for redis cluster:
+
+```
+REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
+
+```
+
+the plugins config file is located at config/plugins.js,
+
+add following section to make it is available for pfapi plugin:
+
+
+```javascript
+module.exports = ({ env }) => ({
+  //...
+  pfapi: {
+    enabled: true,
+    config: {
+      redis_uri: env('REDIS_URI'),
+    }
+  }
+  //...
+})
+```

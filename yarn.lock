@@ -119,12 +119,13 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-strapi-pfapi@^1.8.3:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.8.3.tgz#d0733d123e58cfc5194bc80314dff41dd1d16336"
-  integrity sha512-KIDNMR8uqPP8F345lxsJW7qQRKWXJ2QpNh+FqT2tmv/a6m/bpdNBnhLnqXTBFpZ8Ogjarv/PVUrLs7okFF1DDQ==
+strapi-pfapi@^1.8.6:
+  version "1.8.6"
+  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.8.6.tgz#fde0ccfdef9085fe122dbce5848c4243fc8f380b"
+  integrity sha512-GfMpQYxIIaqtYB9eRpRYz0aeu2di4gWjFtSUiIFFTQFTbKMrfvnRUOAPUdWzilkUjCAS4hDHe5tyiKI+IwN45Q==
   dependencies:
     base-x "4.0.0"
+    debug "^4.3.4"
     fs-extra "^10.1.0"
     ioredis "5.0.6"
     ip-matching "2.1.2"
