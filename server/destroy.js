@@ -1,5 +1,7 @@
 'use strict';
 
 module.exports = async ({ strapi }) => {
-  await strapi.PfapiApp.stop();
+  if (strapi.PfapiApp) {
+    await strapi.PfapiApp.stop();
+  }
 };

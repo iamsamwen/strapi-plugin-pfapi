@@ -1,7 +1,7 @@
 'use strict';
 
-const { install_types } = require('./pfapi');
+const install_types = require('./pfapi/install-types');
 
-module.exports = ({ strapi }) => {
-    install_types(strapi);
+module.exports = async ({ strapi }) => {
+    await install_types(strapi);
 };

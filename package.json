@@ -1,12 +1,15 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.8.0",
+  "version": "1.8.1",
   "description": "Pfapi plugin provides configurable and fast API services.",
   "strapi": {
     "name": "pfapi",
     "description": "Pfapi plugin provides configurable and fast API services.",
     "kind": "plugin",
     "displayName": "Pfapi"
+  },
+  "scripts": {
+    "postinstall": "node ./server/pfapi/post-install.js"
   },
   "author": {
     "name": "Sam Wen"
@@ -18,7 +21,7 @@
   ],
   "dependencies": {
     "fs-extra": "^10.1.0",
-    "strapi-pfapi": "^1.7.9"
+    "strapi-pfapi": "^1.8.1"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
