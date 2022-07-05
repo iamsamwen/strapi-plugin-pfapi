@@ -1,22 +1,18 @@
 'use strict';
 
 const util = require('util');
-const { Refreshable } = require('./');
+const { Refreshable, logging } = require('./');
 
 class GetCount extends Refreshable {
 
     reduce(params) {
-        if (process.env.DEBUG) {
-            console.log('GetCount reduce', util.inspect(params, false, null, true));
-        }
+        logging.debug('GetCount reduce', params);
         const {uid, filters, delay} = params;
         return {uid, filters, delay}
     }
 
     async get_data({uid, delay, ...params}) {
-        if (process.env.DEBUG) {
-            console.log('GetCount get_data', uid, util.inspect(params, false, null, true));
-        }
+        logging.debug('GetCount get_data', uid, params);
         if (!uid) return null;
         const data = await strapi.entityService.count(uid, params);
         const dependencies = [{uid}]

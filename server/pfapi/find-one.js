@@ -1,22 +1,17 @@
 'use strict';
 
-const util = require('util');
-const { Refreshable } = require('./');
+const { Refreshable, logging } = require('./');
 
 class FindOne extends Refreshable {
 
     reduce(params) {
-        if (process.env.DEBUG) {
-            console.log('FindOne reduce', util.inspect(params, false, null, true));
-        }
-        let {uid, fields, filters, populate, delay} = params;
+        logging.debug('FindOne reduce', params);
+        const {uid, fields, filters, populate, delay} = params;
         return {uid, fields, filters, populate, delay, limit: 1}
     }
 
     async get_data({uid, id, delay, ...params}) {
-        if (process.env.DEBUG) {
-            console.log('FindOne get_data', uid,  util.inspect(params, false, null, true));
-        }
+        logging.debug('FindOne get_data', uid, params);
         if (!uid) return null;
         let data = await strapi.entityService.findMany(uid, params);
         if (data.length === 0) return null;

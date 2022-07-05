@@ -1,7 +1,6 @@
 'use strict';
 
-const util = require('util');
-const { Composite } = require('./');
+const { Composite, logging } = require('./');
 
 const find_one = require('./find-one');
 
@@ -10,9 +9,7 @@ class AggregateOne extends Composite {
     item = find_one;
 
     transform(data, params) {
-        if (process.env.DEBUG) {
-            console.log('AggregateOne transform', util.inspect(params, false, null, true));
-        }
+        logging.debug('AggregateOne transform', params);
     }
 }
 

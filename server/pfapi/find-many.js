@@ -1,23 +1,18 @@
 'use strict';
 
-const util = require('util');
-const { Refreshable, get_start_limit } = require('./');
+const { Refreshable, get_start_limit, logging } = require('./');
 
 class FindMany extends Refreshable {
 
     reduce(params) {
-        if (process.env.DEBUG) {
-            console.log('FindMany reduce', util.inspect(params, false, null, true));
-        }
+        logging.debug('FindMany reduce', params);
         const {uid, fields, filters, sort, populate, delay, ...rest} = params;
         const {start, limit} = get_start_limit(rest);
         return {uid, fields, filters, sort, populate, delay, start, limit}
     }
 
     async get_data({uid, delay, ...params}) {
-        if (process.env.DEBUG) {
-            console.log('FindMany get_data', uid, util.inspect(params, false, null, true));
-        }
+        logging.debug('FindMany get_data', params);
         if (!uid) return null;
         const data = await strapi.entityService.findMany(uid, params);
         const dependencies = [];
