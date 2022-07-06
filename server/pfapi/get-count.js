@@ -1,6 +1,5 @@
 'use strict';
 
-const util = require('util');
 const { Refreshable, logging } = require('./');
 
 class GetCount extends Refreshable {

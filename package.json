@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "fs-extra": "^10.1.0",
-    "strapi-pfapi": "^1.8.6"
+    "strapi-pfapi": "^1.8.7"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
