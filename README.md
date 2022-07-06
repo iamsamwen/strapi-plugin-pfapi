@@ -5,7 +5,6 @@ Pfapi plugin provides configurable and fast API services. APIs are configurable 
 ## how to install
 
 ```bash
-cd strapi-pfapi-app
 
 yarn add strapi-plugin-pfapi
 
