@@ -85,6 +85,8 @@ A role with name PfapiDemo is installed in above steps.
 
 Go to Settings > USERS & PERMISSIONS PLUGIN > Roles:
 
+![PfapiDemo](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot3.png)
+
 http://localhost:1337/admin/settings/users-permissions/roles
 
 click on PfapiDemo,
