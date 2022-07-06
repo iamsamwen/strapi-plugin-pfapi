@@ -2,9 +2,47 @@
 
 Pfapi plugin provides configurable and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time.
 
-![components and dynamic zone](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot2.png)
+## how to install
+
+```bash
+cd strapi-pfapi-app
+
+yarn add strapi-plugin-pfapi
+
+```
+## config redis uri
+
+By default if it is not set, Pfapi uses redis://localhost/0.
+
+You can set it to a different host and database number by providing **REDIS_URI** in plugins config file.
+
+For redis cluster config, here is an example:
+
+```
+REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
+
+```
+
+the plugins config file is located at config/plugins.js,
+
+add following section:
+
+```javascript
+module.exports = ({ env }) => ({
+  //...
+  pfapi: {
+    enabled: true,
+    config: {
+      redis_uri: env('REDIS_URI'),
+    }
+  }
+  //...
+})
+```
 
 ## how to use
+
+![components and dynamic zone](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot2.png)
 
 The plugin uses the <a href="https://github.com/iamsamwen/strapi-pfapi">strapi-pfapi library</a>. With the world cities test data set provided by plugin strapi-plugin-pfapi-data, we can run a few API calls to demonstrate the idea.
 
@@ -116,33 +154,3 @@ check APIs:
 http://localhost:1337/pfapi/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
-
-## config redis uri
-
-By default if it is not set, Pfapi uses redis://localhost/0.
-
-You can set it to a different host and database number by providing **REDIS_URI** in plugins config file.
-
-For redis cluster config, here is an example:
-
-```
-REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
-
-```
-
-the plugins config file is located at config/plugins.js,
-
-add following section:
-
-```javascript
-module.exports = ({ env }) => ({
-  //...
-  pfapi: {
-    enabled: true,
-    config: {
-      redis_uri: env('REDIS_URI'),
-    }
-  }
-  //...
-})
-```
