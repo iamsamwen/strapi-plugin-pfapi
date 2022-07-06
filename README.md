@@ -20,24 +20,17 @@ yarn create strapi-app strapi-pfapi-app --quickstart
 
 after create and login your Strapi account from browser, stop the strapi server.
 
-### step 3 install strapi-plugin-pfapi
+### step 3 install strapi-plugin-pfapi and strapi-plugin-pfapi-data
+
+You don't have to install strapi-plugin-pfapi-data for your production.
+
+strapi-plugin-pfapi-data provides a test data test for purpose of demo and test
+
 
 ```bash
 cd strapi-pfapi-app
 
-yarn add strapi-plugin-pfapi
-
-yarn develop
-
-```
-
-stop the strapi server
-
-### step 4 install strapi-plugin-pfapi-data
-
-```bash
-
-yarn add strapi-plugin-pfapi-data
+yarn add strapi-plugin-pfapi strapi-plugin-pfapi-data
 
 yarn develop
 
@@ -45,7 +38,7 @@ yarn develop
 
 ![Admin Panel](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot1.png)
 
-### step 5 test pfapi
+### step 4 setup api_key and permissions
 
 get your api_key from:
 
@@ -61,24 +54,29 @@ click on PfapiDemo,
 
 Under Permissions > World-city
 
-assign find and findOne permissions to PfapiDemo and click save.
+assign **find** and **findOne** permissions to PfapiDemo and click save.
 
 OK, we are ready to run tests, please replace Pfapi-Demo-XXXXXXXX with your specific key or set your api_key to Pfapi-Demo-XXXXXXXX.
 
+### step 5 demos && tests
 
-### a) tests with world-cities as path variable
+### a) tests content-type name **world-cities** as path variable
 
 http://localhost:1337/pfapi/world-cities?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/world-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
-### b) tests with config handle northern-cities as path variable
+### b) tests config handle **northern-cities** as path variable
 
-config data defined in PfapiHandles for handle **northern-cities**:
+handle configs are defined in PfapiHandle.
+
+***/pfapi***
 
 http://localhost:1337/pfapi/northern-cities?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
+
+***/pfapi/pf***
 
 http://localhost:1337/pfapi/pf/northern-cities?api_key=Pfapi-Demo-XXXXXXXX
 
@@ -93,9 +91,7 @@ http://localhost:1337/pfapi/pf/northern-city/Anchorage?api_key=Pfapi-Demo-XXXXXX
 
 ### d) test data update
 
-goto 
-
-http://localhost:1337/admin/content-manager/collectionType/api::world-city.world-city/2148
+goto http://localhost:1337/admin/content-manager/collectionType/api::world-city.world-city/2148
 
 make some change, for example: change population from 288000 to 288001
 
@@ -111,11 +107,9 @@ to see if the cached data evicted and updated
 
 ### e) test config update
 
-goto
+goto http://localhost:1337/admin/content-manager/collectionType/plugin::pfapi.pfapi-handle/1
 
-http://localhost:1337/admin/content-manager/collectionType/plugin::pfapi.pfapi-handle/1
-
-make some change, for example: add country to the fields array
+make some change, for example: add or remove country to the fields array
 
 check APIs:
 
@@ -125,11 +119,11 @@ http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 ## config redis uri
 
-By default if environment variable **REDIS_URI** is not set, it use redis://localhost/0.
+By default if it is not set, Pfapi uses redis://localhost/0.
 
-You can set it to a different host and database number by providing **REDIS_URI**.
+You can set it to a different host and database number by providing **REDIS_URI** in plugins config file.
 
-here is an example for redis cluster:
+For redis cluster config, here is an example:
 
 ```
 REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
@@ -138,8 +132,7 @@ REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
 
 the plugins config file is located at config/plugins.js,
 
-add following section to make it is available for pfapi plugin:
-
+add following section:
 
 ```javascript
 module.exports = ({ env }) => ({
