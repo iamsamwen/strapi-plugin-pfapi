@@ -58,7 +58,7 @@ assign **find** and **findOne** permissions to PfapiDemo and click save.
 
 OK, we are ready to run tests, please replace Pfapi-Demo-XXXXXXXX with your specific key or set your api_key to Pfapi-Demo-XXXXXXXX.
 
-### step 5 demos && tests
+### step 5 demos
 
 ### a) tests content-type name **world-cities** as path variable
 
