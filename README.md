@@ -46,7 +46,7 @@ The <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/da
 
 ## EJS for text and richtext fields
 
-We can use EJS to customize String fields in the json object you see in the api response.
+We can use EJS to customize String fields in the api response json object.
 
 For examples:
 
