@@ -1,8 +1,8 @@
 'use strict';
 
-const default_configs = require('./default-configs');
+const config = require('./config');
 
 module.exports = {
-  default: default_configs,
+  default: config,
   validator() {},
 };

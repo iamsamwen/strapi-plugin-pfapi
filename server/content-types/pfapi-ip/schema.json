@@ -13,15 +13,18 @@
   "pluginOptions": {},
   "attributes": {
     "ip": {
-      "type": "string",
-      "required": true
+      "type": "string"
+    },
+    "prefix": {
+      "type": "string"
     },
     "status": {
       "type": "enumeration",
       "enum": [
         "white-list",
         "black-list"
-      ]
+      ],
+      "required": true
     },
     "comment": {
       "type": "string"

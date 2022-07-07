@@ -9,7 +9,7 @@
     "displayName": "Pfapi"
   },
   "scripts": {
-    "postinstall": "node ./server/pfapi/post-install.js"
+    "postinstall": "node ./post-install.js"
   },
   "author": {
     "name": "Sam Wen"

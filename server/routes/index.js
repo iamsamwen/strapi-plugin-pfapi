@@ -1,8 +1,11 @@
+'use strict';
+
 module.exports = [
+
   /**
    * routes available for development and debug
    */
-  {
+   {
     method: 'GET',
     path: '/cache/:type/:key',
     handler: 'pfapiController.handleCacheRequest',
@@ -54,4 +57,5 @@ module.exports = [
       auth: false,
     },
   }
+  
 ];

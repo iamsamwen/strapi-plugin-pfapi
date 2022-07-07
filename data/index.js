@@ -2,11 +2,11 @@
 
 const fs = require('fs-extra');
 const node_path = require('path');
-const { find_project_root } = require('./');
+const { find_project_root } = require('../server/lib');
 
 module.exports = async () => {
 
-    const root = find_project_root('src/plugins/pfapi/server/pfapi', __dirname);
+    const root = find_project_root('src/plugins/pfapi/data', __dirname);
 
     const components_path = node_path.join(root, 'src', 'components');
 

@@ -13,9 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "ip_mask": {
-      "type": "string",
-      "default": "255.255.255.255",
-      "required": true
+      "type": "string"
     },
     "prefix": {
       "type": "string"

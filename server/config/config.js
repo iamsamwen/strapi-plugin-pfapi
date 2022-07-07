@@ -102,7 +102,7 @@ module.exports = {
     ],
 
     Ip: [
-        {ip: '127.0.0.1', status: 'white-list', comment: 'call from localhost'}
+        {ip: '127.0.0.0/24', status: 'white-list', comment: 'call from localhost'}
     ],
 
     DemoRole: {name: 'PfapiDemo', description: 'Pfapi demo role', type: 'pfapidemo'},
