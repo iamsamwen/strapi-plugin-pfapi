@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.9.1",
+  "version": "1.9.2",
   "description": "Pfapi plugin provides configurable and fast API services.",
   "strapi": {
     "name": "pfapi",
@@ -14,14 +14,32 @@
   "author": {
     "name": "Sam Wen"
   },
+  "keywords": [
+    "strapi",
+    "plugin",
+    "local",
+    "redis",
+    "cache",
+    "fast",
+    "single",
+    "digit",
+    "milliseconds",
+    "api",
+    "processing",
+    "response",
+    "time",
+    "ejs",
+    "template"
+  ],
   "maintainers": [
     {
       "name": "Sam Wen"
     }
   ],
   "dependencies": {
+    "ejs": "^3.1.8",
     "fs-extra": "^10.1.0",
-    "strapi-pfapi": "^1.9.1"
+    "strapi-pfapi": "^1.9.2"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",

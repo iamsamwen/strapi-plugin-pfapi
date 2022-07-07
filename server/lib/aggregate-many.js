@@ -4,6 +4,7 @@ const { Composite, get_pagination, logging } = require('./');
 
 const find_many = require('./find-many');
 const get_count = require('./get-count');
+const run_ejs = require('./run-ejs');
 
 class AggregateMany extends Composite {
 
@@ -13,9 +14,11 @@ class AggregateMany extends Composite {
 
     transform(data, params) {
         logging.debug('AggregateMany transform', params);
-        data.pagination = get_pagination({...params, total: data.total });
-        delete data.total;
+        const total = data.total;
+        data.pagination = get_pagination({...params, total });
         if (params.sort) data.sort = params.sort;
+        run_ejs(data);
+        delete data.total;
     }
 }
 
