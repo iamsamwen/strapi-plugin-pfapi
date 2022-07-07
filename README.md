@@ -39,6 +39,21 @@ module.exports = ({ env }) => ({
 })
 ```
 
+## API parameters
+
+The <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/api-parameters.html">API parameters</a> defined by strapi works for Pfapi.
+
+
+## EJS for text and richtext fields
+
+We can use EJS to customize String fields in the json object you see in the api response.
+
+For examples:
+
+In northern-cities handle, Northern Cities - Total **<%= pagination.total %>** is the title.
+
+In northern-city handle,  Northern City - **<%= item.name %>** is the title
+
 ## how to use
 
 ![components and dynamic zone](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot2.png)
@@ -121,6 +136,9 @@ http://localhost:1337/pfapi/pf/northern-cities?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
+***strapi api parameters***
+
+http://localhost:1337/pfapi/northern-cities?filters[iso3]=USA&api_key=Pfapi-Demo-XXXXXXXX
 
 ### c) tests with config handle northern-city with id_field is name
 
@@ -155,10 +173,3 @@ check APIs:
 http://localhost:1337/pfapi/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
-
-### API parameters
-
-The <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/api-parameters.html">API parameters</a> defined by strapi works for Pfapi.
-
-
-http://localhost:1337/pfapi/northern-cities?filters[iso3]=USA&api_key=Pfapi-Demo-XXXXXXXX

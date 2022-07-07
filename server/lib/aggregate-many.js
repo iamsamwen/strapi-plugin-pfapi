@@ -15,10 +15,10 @@ class AggregateMany extends Composite {
     transform(data, params) {
         logging.debug('AggregateMany transform', params);
         const total = data.total;
+        delete data.total;
         data.pagination = get_pagination({...params, total });
         if (params.sort) data.sort = params.sort;
         run_ejs(data);
-        delete data.total;
     }
 }
 
