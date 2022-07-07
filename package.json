@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "Pfapi plugin provides configurable and fast API services.",
   "strapi": {
     "name": "pfapi",
@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "fs-extra": "^10.1.0",
-    "strapi-pfapi": "^1.9.0"
+    "strapi-pfapi": "^1.9.1"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",
