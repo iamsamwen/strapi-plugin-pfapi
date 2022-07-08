@@ -43,17 +43,6 @@ module.exports = ({ env }) => ({
 
 The <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/api-parameters.html">API parameters</a> defined by strapi works for Pfapi.
 
-
-## EJS template for text and richtext component fields
-
-We can use EJS template to customize String fields in the api response json object.
-
-For examples:
-
-In northern-cities handle, Northern Cities - Total **<%= pagination.total %>** is the title.
-
-In northern-city handle,  Northern City - **<%= item.name %>** is the title
-
 ## Defense
 
 ### 1) ip white list and black list
@@ -79,7 +68,17 @@ module.exports = [
 ];
 ```
 
-## how to use
+## EJS template for text and richtext component fields
+
+We can use EJS template to customize String fields in the api response json object.
+
+For examples:
+
+In northern-cities handle, Northern Cities - Total **<%= pagination.total %>** is the title.
+
+In northern-city handle,  Northern City - **<%= item.name %>** is the title
+
+## How to use
 
 ![components and dynamic zone](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot2.png)
 
