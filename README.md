@@ -22,9 +22,9 @@ REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
 
 ```
 
-the plugins config file is located at config/plugins.js,
+the plugins config file is located at:
 
-add following section:
+config/plugins.js
 
 ```javascript
 module.exports = ({ env }) => ({
@@ -54,17 +54,30 @@ In northern-cities handle, Northern Cities - Total **<%= pagination.total %>** i
 
 In northern-city handle,  Northern City - **<%= item.name %>** is the title
 
-## ip white list and black list
+## Defense
 
-Collection Types PfapiIp conveniently provides ip white list and black list mechanism for Pfapi APIs.
+### 1) ip white list and black list
 
-It only works for Pfapi APIs.
+**PfapiIp** conveniently provides access to ip white list and black list mechanism.
 
-## rate limit for API calls
+### 2) rate limit for API calls
 
-PfapiRateLimit provides rate limit mechanism for Pfapi APIs.
+**PfapiRateLimit** provides access to rate limits mechanism (different from the rate limits come with strapi).
 
-It only works for Pfapi APIs.
+Changes made to the two collections are effect immediately without restarting strapi servers.
+
+Without enabling the defense middleware of pfapi plugin, above mechanisms work only for Pfapi APIs.
+
+To cover all routes provided by strapi:
+
+config/middlewares.js
+
+```javascript
+module.exports = [
+  //...
+  'plugin::pfapi.defense',
+];
+```
 
 ## how to use
 

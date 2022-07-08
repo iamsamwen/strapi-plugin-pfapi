@@ -1,3 +1,7 @@
 'use strict';
 
-module.exports = {};
+const defense = require('./defense');
+
+module.exports = {
+  defense
+}

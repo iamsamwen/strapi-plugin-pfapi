@@ -4,7 +4,8 @@
   "info": {
     "singularName": "pfapi-ip",
     "pluralName": "pfapi-ips",
-    "displayName": "PfapiIp"
+    "displayName": "PfapiIp",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false,
@@ -12,22 +13,17 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "ip": {
-      "type": "string"
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 128
     },
-    "prefix": {
-      "type": "string"
-    },
-    "status": {
-      "type": "enumeration",
-      "enum": [
-        "white-list",
-        "black-list"
+    "ip_prefix_list": {
+      "type": "dynamiczone",
+      "components": [
+        "pfapi-types.ip-prefix"
       ],
       "required": true
-    },
-    "comment": {
-      "type": "string"
     }
   }
 }
