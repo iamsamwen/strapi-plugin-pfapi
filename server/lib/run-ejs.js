@@ -1,6 +1,9 @@
 'use strict';
 
 const ejs = require('ejs');
+const LRU = require('lru-cache');
+
+ejs.cache = new LRU({max: 1024, maxSize: 128 * 1024, ttl: 900000} );
 
 module.exports = (object) => {
     for (const [key, value] of Object.entries(object)) {

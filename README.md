@@ -44,15 +44,27 @@ module.exports = ({ env }) => ({
 The <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/api-parameters.html">API parameters</a> defined by strapi works for Pfapi.
 
 
-## EJS for text and richtext fields
+## EJS template for text and richtext component fields
 
-We can use EJS to customize String fields in the api response json object.
+We can use EJS template to customize String fields in the api response json object.
 
 For examples:
 
 In northern-cities handle, Northern Cities - Total **<%= pagination.total %>** is the title.
 
 In northern-city handle,  Northern City - **<%= item.name %>** is the title
+
+## ip white list and black list
+
+Collection Types PfapiIp conveniently provides ip white list and black list mechanism for Pfapi APIs.
+
+It only works for Pfapi APIs.
+
+## rate limit for API calls
+
+PfapiRateLimit provides rate limit mechanism for Pfapi APIs.
+
+It only works for Pfapi APIs.
 
 ## how to use
 
