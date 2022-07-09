@@ -5,21 +5,18 @@ Pfapi plugin provides configurable and fast API services. APIs are configurable 
 ## how to install
 
 ```bash
-
 yarn add strapi-plugin-pfapi
-
 ```
-## config redis uri
+## config Redis URI
 
-By default if it is not set, Pfapi uses redis://localhost/0.
+By default, if it is not set, Pfapi uses redis://localhost/0.
 
-You can set it to a different host and database number by providing **REDIS_URI** in plugins config file.
+You can set it to a different host and database number by providing **REDIS_URI** in the plugins config file.
 
-For redis cluster config, here is an example:
+For Redis cluster config, here is an example:
 
-```
+```bash
 REDIS_URI=redis://172.31.23.70:6379,172.31.30.210:6379,172.31.22.214:6379/0
-
 ```
 
 the plugins config file is located at:
@@ -41,23 +38,25 @@ module.exports = ({ env }) => ({
 
 ## API parameters
 
-The <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/api-parameters.html">API parameters</a> defined by strapi works for Pfapi.
+The same <a href="https://docs.strapi.io/developer-docs/latest/developer-resources/database-apis-reference/rest/api-parameters.html">Strapi API parameters</a>: sort, filters, populate, fields, pagination and publicationState works for Pfapi.
 
-## Defense
+## Security Defense
 
-### 1) ip white list and black list
+### 1) IP allow list and block list
 
-**PfapiIp** conveniently provides access to ip white list and black list mechanism.
+**PfapiIp** conveniently provides access to IP allow list and block list mechanism. IPs in allow list will not check rate limits. IPs in block list will not have access to the prefix.
 
 ### 2) rate limit for API calls
 
-**PfapiRateLimit** provides access to rate limits mechanism (different from the rate limits come with strapi).
+**PfapiRateLimit** provides access to the rate limits mechanism. rate limits can set with IP Mask and prefix.
 
-Changes made to the two collections are effect immediately without restarting strapi servers.
+*(it is the same with the rate limits that come with strapi)*
 
-Without enabling the defense middleware of pfapi plugin, above mechanisms work only for Pfapi APIs.
+Changes made to the two collections are effective immediately without restarting strapi servers.
 
-To enable defense middle and cover all routes provided by strapi:
+Without enabling the defense middleware of pfapi plugin, the above mechanisms work only for Pfapi APIs.
+
+To enable defense middleware and cover all routes provided by strapi:
 
 config/middlewares.js
 
@@ -70,13 +69,11 @@ module.exports = [
 
 ## EJS template for text and richtext component fields
 
-We can use EJS template to customize String fields in the api response json object.
+We can use the EJS template to customize String fields in the api response JSON object.
 
-For examples:
+For example:
 
-In northern-cities handle, Northern Cities - Total **<%= pagination.total %>** is the title.
-
-In northern-city handle,  Northern City - **<%= item.name %>** is the title
+In the northern-city handle,  Northern City - **<%= item.name %>** is the title
 
 ## How to use
 
@@ -84,7 +81,7 @@ In northern-city handle,  Northern City - **<%= item.name %>** is the title
 
 The plugin uses the <a href="https://github.com/iamsamwen/strapi-pfapi">strapi-pfapi library</a>. With the world cities test data set provided by plugin strapi-plugin-pfapi-data, we can run a few API calls to demonstrate the idea.
 
-### step 1 install redis server
+### step 1 install Redis server
 
 Refer to: <a href="https://redis.io/docs/getting-started/">install redis server</a> on your local computer.
 
@@ -94,13 +91,13 @@ Refer to: <a href="https://redis.io/docs/getting-started/">install redis server<
 yarn create strapi-app strapi-pfapi-app --quickstart 
 ```
 
-after create and login your Strapi account from browser, stop the strapi server.
+After creating and logging into your Strapi account from the browser, stop the strapi server.
 
 ### step 3 install strapi-plugin-pfapi and strapi-plugin-pfapi-data
 
 You don't have to install strapi-plugin-pfapi-data for your production.
 
-strapi-plugin-pfapi-data provides a test data test for purpose of demo and test
+strapi-plugin-pfapi-data provides a test data test for demo and test
 
 
 ```bash
@@ -120,7 +117,7 @@ get your api_key from:
 
 http://localhost:1337/admin/content-manager/collectionType/plugin::pfapi.pfapi-key?page=1&pageSize=10&sort=key:ASC
 
-A role with name PfapiDemo is installed in above steps.
+A role with name PfapiDemo is installed in the above steps.
 
 Go to Settings > USERS & PERMISSIONS PLUGIN > Roles:
 
@@ -174,7 +171,7 @@ http://localhost:1337/pfapi/pf/northern-city/Anchorage?api_key=Pfapi-Demo-XXXXXX
 
 goto http://localhost:1337/admin/content-manager/collectionType/api::world-city.world-city/2148
 
-make some change, for example: change population from 288000 to 288001
+make some change, for example: change the population from 288000 to 288001
 
 check APIs:
 
@@ -184,13 +181,13 @@ http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/pf/northern-city/Anchorage?api_key=Pfapi-Demo-XXXXXXXX
 
-to see if the cached data evicted and updated
+to see if the cached data was evicted and updated
 
 ### e) test config update
 
 goto http://localhost:1337/admin/content-manager/collectionType/plugin::pfapi.pfapi-handle/1
 
-make some change, for example: add or remove country to the fields array
+make some changes, for example: add or remove country to the fields array
 
 check APIs:
 
