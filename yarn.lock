@@ -219,15 +219,20 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
+request-ip@^3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/request-ip/-/request-ip-3.3.0.tgz#863451e8fec03847d44f223e30a5d63e369fa611"
+  integrity sha512-cA6Xh6e0fDBBBwH77SLJaJPBmD3nWVAcF9/XAcsrIHdjhFzFiB5aNQFytdjCGPezU3ROwrR11IddKAM08vohxA==
+
 standard-as-callback@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-strapi-pfapi@^1.9.6:
-  version "1.9.6"
-  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.9.6.tgz#9350e3af1e7418353aa1da1a598593a75414aaca"
-  integrity sha512-nw41DamT5PgfoVc2xG4v4myENa8DdxgT3a/7ytsisJmBALFpB+Zg+Ygbfrz26bnMjM/PaYXENELrU0CxmaGc4A==
+strapi-pfapi@^1.9.7:
+  version "1.9.7"
+  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-1.9.7.tgz#3b310dbd56012440f83332a775d8d2a07c92366b"
+  integrity sha512-fUxjY3oXq+UHL+gsnHoukSNydsbuqjUUXiKsujP+tMK1Hk5tWOkwsJDN98zoMvtgtYaz89TIO5X6owFVIxRLlA==
   dependencies:
     base-x "4.0.0"
     debug "^4.3.4"
@@ -237,6 +242,7 @@ strapi-pfapi@^1.9.6:
     lodash "4.17.21"
     netmask "^2.0.2"
     parse-redis-url-simple "^1.0.2"
+    request-ip "^3.3.0"
     uuid "8.3.2"
 
 supports-color@^7.1.0:
