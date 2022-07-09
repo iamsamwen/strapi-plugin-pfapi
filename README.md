@@ -1,6 +1,6 @@
 # Strapi plugin pfapi
 
-Pfapi plugin provides configurable and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time.
+Pfapi plugin provides configurable, secure and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time. IP allow list, block list and Rate limits mechanisms are included and conveniently accessible.
 
 ## how to install
 

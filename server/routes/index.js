@@ -1,7 +1,6 @@
 'use strict';
 
 module.exports = [
-
   /**
    * routes available for development and debug
    */
@@ -14,7 +13,7 @@ module.exports = [
     },
   },
   /**
-   * routes for pfapi
+   * retrieve routes for pfapi
    */
   {
     method: 'GET',

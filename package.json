@@ -1,10 +1,10 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.9.9",
-  "description": "Pfapi plugin provides configurable and fast API services.",
+  "version": "2.0.0",
+  "description": "Pfapi plugin provides configurable, secure and fast API services.",
   "strapi": {
     "name": "pfapi",
-    "description": "Pfapi plugin provides configurable and fast API services.",
+    "description": "Pfapi plugin provides configurable, secure and fast API services.",
     "kind": "plugin",
     "displayName": "Pfapi"
   },
@@ -40,7 +40,7 @@
     "ejs": "^3.1.8",
     "fs-extra": "^10.1.0",
     "lru-cache": "^7.12.0",
-    "strapi-pfapi": "^1.9.8"
+    "strapi-pfapi": "^2.0.0"
   },
   "engines": {
     "node": ">=14.19.1 <=16.x.x",

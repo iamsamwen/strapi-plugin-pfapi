@@ -3,7 +3,7 @@
 module.exports = {
 
   pfapiController: {
-    // for pfapi 
+    // for pfapi retrieve
     async findOne(ctx) {
       const service = strapi.plugin('pfapi').service('Pfapi');
       await service.findOne(ctx);
