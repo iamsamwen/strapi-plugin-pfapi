@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "1.9.8",
+  "version": "1.9.9",
   "description": "Pfapi plugin provides configurable and fast API services.",
   "strapi": {
     "name": "pfapi",

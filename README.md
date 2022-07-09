@@ -46,11 +46,11 @@ The same <a href="https://docs.strapi.io/developer-docs/latest/developer-resourc
 
 **PfapiIp** conveniently provides access to IP allow list and block list mechanism. IPs in allow list will not check rate limits. IPs in block list will not have access to the prefix.
 
-### 2) rate limit for API calls
+### 2) Rate limits for API calls
 
 **PfapiRateLimit** provides access to the rate limits mechanism. rate limits can set with IP Mask and prefix.
 
-*(it is the same with the rate limits that come with strapi)*
+*(it is not the same with the rate limits that come with strapi)*
 
 Changes made to the two collections are effective immediately without restarting strapi servers.
 
