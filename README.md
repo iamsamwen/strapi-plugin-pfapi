@@ -57,7 +57,7 @@ Changes made to the two collections are effect immediately without restarting st
 
 Without enabling the defense middleware of pfapi plugin, above mechanisms work only for Pfapi APIs.
 
-To cover all routes provided by strapi:
+To enable defense middle and cover all routes provided by strapi:
 
 config/middlewares.js
 
