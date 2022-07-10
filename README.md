@@ -2,6 +2,21 @@
 
 Pfapi plugin provides configurable, secure and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time. IP allow list, block list and Rate limits mechanisms are included and conveniently accessible.
 
+Here are some test results for cached vs no cache:
+
+|	 |test 1	|test 2	|test 3
+|--|-------|-------|-------
+|**cached** api response time	|4.95	|2.11	|1.86
+|nocache api response time	|488	|493	|489
+|cached total request time	|343	|273	|273
+|nocache total request time	|955	|922	|927
+
+*number are in milliseconds*
+
+![test results](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot4.png)
+
+We can see pfapi plugin improves the api response time to 100 times faster. For detail, please read <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester</a> and the section at bottom. 
+
 ## how to install
 
 ```bash
@@ -50,13 +65,13 @@ The same <a href="https://docs.strapi.io/developer-docs/latest/developer-resourc
 
 **PfapiRateLimit** provides access to the rate limits mechanism. rate limits can set with IP Mask and prefix.
 
-*(it is not the same with the rate limits that come with strapi)*
+*(it is not the same as the rate limits that come with strapi)*
 
 Changes made to the two collections are effective immediately without restarting strapi servers.
 
 Without enabling the defense middleware of pfapi plugin, the above mechanisms work only for Pfapi APIs.
 
-To enable defense middleware and cover all routes provided by strapi:
+To enable the defense middleware and cover all routes:
 
 config/middlewares.js
 
@@ -194,3 +209,12 @@ check APIs:
 http://localhost:1337/pfapi/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
+
+
+## pfapi-tester
+
+pfapi-tester is load tester for pfapi plugin. please refer to <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester readme</a> for detail.
+
+You can use it to test and verify pfapi plugin or your production system before launch.
+
+
