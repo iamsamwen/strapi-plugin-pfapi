@@ -11,9 +11,11 @@ Here are some test results for cached vs no cache:
 |cached total request time	|343	|273	|273
 |nocache total request time	|955	|922	|927
 
+*number are in milliseconds*
+
 ![test results](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot4.png)
 
-We can see pfapi plugin improves the api response time to 100 times faster. For detail, please read pfapi-tester section at bottom. 
+We can see pfapi plugin improves the api response time to 100 times faster. For detail, please read <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester</a> and the section at bottom. 
 
 ## how to install
 
