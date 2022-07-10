@@ -32,6 +32,14 @@ module.exports = [
     },
   },
   {
+    method: 'GET',
+    path: '/:handle/count',
+    handler: 'pfapiController.getCount',
+    config: {
+      auth: false,
+    },
+  },
+  {
      method: 'GET',
      path: '/:handle/:id',
      handler: 'pfapiController.findOne',
@@ -44,14 +52,6 @@ module.exports = [
     method: 'GET',
     path: '/:handle',
     handler: 'pfapiController.findMany',
-    config: {
-      auth: false,
-    },
-  },
-  {
-    method: 'GET',
-    path: '/:handle/count',
-    handler: 'pfapiController.getCount',
     config: {
       auth: false,
     },
