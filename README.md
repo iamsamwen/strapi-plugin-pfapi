@@ -213,8 +213,8 @@ http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 ## pfapi-tester
 
-pfapi-tester is load tester for pfapi plugin. please refer to <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester readme</a> for detail.
+pfapi-tester is the stress tester for pfapi plugin. please refer to <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester readme</a> for detail.
 
-You can use it to test and verify pfapi plugin or your production system before launch.
+I use it to test and verify pfapi plugin. It can use to stress test projects use pfapi plugin.
 
 
