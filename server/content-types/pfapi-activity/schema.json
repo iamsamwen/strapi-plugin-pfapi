@@ -1,0 +1,59 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pfapi_activities",
+  "info": {
+    "singularName": "pfapi-activity",
+    "pluralName": "pfapi-activities",
+    "displayName": "PfapiActivity",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "started_at_ms": {
+      "type": "biginteger"
+    },
+    "run_time": {
+      "type": "decimal"
+    },
+    "status": {
+      "type": "integer"
+    },
+    "method": {
+      "type": "string",
+      "maxLength": 16
+    },
+    "ip": {
+      "type": "string"
+    },
+    "path": {
+      "type": "string"
+    },
+    "handler": {
+      "type": "string"
+    },
+    "api_key": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "blocked": {
+      "type": "boolean"
+    },
+    "allowed": {
+      "type": "boolean"
+    },
+    "throttled": {
+      "type": "boolean"
+    },
+    "is_auth": {
+      "type": "boolean"
+    },
+    "content_length": {
+      "type": "integer"
+    }
+  }
+}
