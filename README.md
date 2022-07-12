@@ -2,20 +2,16 @@
 
 Pfapi plugin provides configurable, secure and fast API services. APIs are configurable through the admin panel with components and dynamic zone. Pfapi uses local and Redis caches to achieve single-digit milliseconds on average API response time. IP allow list, block list and Rate limits mechanisms are included and conveniently accessible.
 
-Here are some test results for cached vs no cache:
+Here are some test results for cached vs no cache comparison:
 
 |	 |test 1	|test 2	|test 3
 |--|-------|-------|-------
-|**cached** api response time	|4.95	|2.11	|1.86
-|nocache api response time	|488	|493	|489
-|cached total request time	|343	|273	|273
-|nocache total request time	|955	|922	|927
-
-*number are in milliseconds*
+|**cached** api response time	|3.13	|0.97	|1.07
+|no cache api response time	|16.93	|16.74	|16.72
 
 ![test results](https://github.com/iamsamwen/strapi-plugin-pfapi/blob/main/images/screen-shot4.png)
 
-We can see pfapi plugin improves the api response time to 100 times faster. For detail, please read <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester</a> and the section at bottom. 
+We can see pfapi plugin improves the api response time to single digit milliseconds range. For detail, please read <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester</a> and the section at bottom. 
 
 ## how to install
 
@@ -215,6 +211,113 @@ http://localhost:1337/pfapi/pf/northern-cities/2148?api_key=Pfapi-Demo-XXXXXXXX
 
 pfapi-tester is the stress tester for pfapi plugin. please refer to <a href="https://github.com/iamsamwen/pfapi-tester">pfapi-tester readme</a> for detail.
 
-I use it to test and verify pfapi plugin. It can use to stress test projects use pfapi plugin.
+We can use it to get api capacity metrics of APIs that use pfapi plugin.
+
+Here are the raw data collected for the cached vs no cache comparison:
+```
+# 3 tests for cached data
+
+> pfapi-tester -t 10 
+++++++++++
+{
+  base_url: '...',
+  path: '/pfapi/pf/northern-cities',
+  times: 10
+}
+total: 10 ok: 10 not_ok: 0
+------------------------------
+   	pfapi	http	total
+------------------------------
+ave	3.13	4.24	134.44
+min	0.88	1.78	94.34
+max	21.14	22.36	229.76
+------------------------------
+
+> pfapi-tester -t 10 
+++++++++++
+{
+  base_url: '...',
+  path: '/pfapi/pf/northern-cities',
+  times: 10
+}
+total: 10 ok: 10 not_ok: 0
+------------------------------
+   	pfapi	http	total
+------------------------------
+ave	0.97	2.05	125.62
+min	0.89	1.82	101.23
+max	1.05	3.24	178.90
+------------------------------
+
+> pfapi-tester -t 10 
+++++++++++
+{
+  base_url: '...',
+  path: '/pfapi/pf/northern-cities',
+  times: 10
+}
+total: 10 ok: 10 not_ok: 0
+------------------------------
+   	pfapi	http	total
+------------------------------
+ave	1.07	2.09	132.43
+min	0.91	1.79	99.12
+max	1.96	2.97	182.29
+------------------------------
+
+# 3 tests for no cache data
+
+> pfapi-tester -t 10 -r
+++++++++++
+{
+  base_url: '...',
+  path: '/pfapi/pf/northern-cities',
+  times: 10,
+  ss_rand: true
+}
+total: 10 ok: 10 not_ok: 0
+------------------------------
+   	pfapi	http	total
+------------------------------
+ave	16.93	17.90	142.81
+min	16.33	17.27	109.83
+max	18.07	18.94	192.21
+------------------------------
+
+> pfapi-tester -t 10 -r
+++++++++++
+{
+  base_url: '...',
+  path: '/pfapi/pf/northern-cities',
+  times: 10,
+  ss_rand: true
+}
+total: 10 ok: 10 not_ok: 0
+------------------------------
+   	pfapi	http	total
+------------------------------
+ave	16.74	17.79	147.02
+min	16.19	17.13	112.83
+max	17.99	19.07	187.56
+------------------------------
+
+> pfapi-tester -t 10 -r
+++++++++++
+{
+  base_url: '...',
+  path: '/pfapi/pf/northern-cities',
+  times: 10,
+  ss_rand: true
+}
+total: 10 ok: 10 not_ok: 0
+------------------------------
+   	pfapi	http	total
+------------------------------
+ave	16.72	17.70	135.34
+min	16.22	17.15	109.03
+max	17.44	18.31	189.94
+------------------------------
+
+```
 
 
