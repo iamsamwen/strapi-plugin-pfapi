@@ -53,9 +53,9 @@ The same <a href="https://docs.strapi.io/developer-docs/latest/developer-resourc
 
 ## Security Defense
 
-### 1) IP allow list and block list
+### 1) IP unlimited list and blocked list
 
-**PfapiIp** conveniently provides access to IP allow list and block list mechanism. IPs in allow list will not check rate limits. IPs in block list will not have access to the prefix.
+**PfapiIp** conveniently provides access to IP unlimited list and blocked list mechanism. IPs in unlimited list will not check rate limits. IPs in blocked list will not have access to the prefix.
 
 ### 2) Rate limits for API calls
 

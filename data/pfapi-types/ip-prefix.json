@@ -18,8 +18,8 @@
     "status": {
       "type": "enumeration",
       "enum": [
-        "allow-list",
-        "block-list"
+        "unlimited",
+        "blocked"
       ],
       "required": true
     },
