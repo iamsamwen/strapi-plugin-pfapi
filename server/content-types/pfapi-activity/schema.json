@@ -40,6 +40,12 @@
     "role": {
       "type": "string"
     },
+    "cache_key": {
+      "type": "string"
+    },
+    "ss_rand": {
+      "type": "boolean"
+    },
     "blocked": {
       "type": "boolean"
     },
