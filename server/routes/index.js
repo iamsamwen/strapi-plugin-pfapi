@@ -15,6 +15,14 @@ module.exports = [
   /**
    * retrieve routes for pfapi
    */
+   {
+    method: 'GET',
+    path: '/filters/:handle',
+    handler: 'pfapiController.getFilters',
+    config: {
+      auth: false,
+    },
+  },
   {
     method: 'GET',
     path: '/pf/:handle',
