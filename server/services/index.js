@@ -5,6 +5,7 @@ const find_many = require('../lib/find-many');
 const get_count = require('../lib/get-count');
 const aggregate_many = require('../lib/aggregate-many');
 const aggregate_one = require('../lib/aggregate-one');
+const getFilters = require('../lib/get-filters');
 
 module.exports = {
 
@@ -14,6 +15,9 @@ module.exports = {
     },
     async findMany(ctx) {
         await strapi.PfapiApp.handle(ctx, find_many);
+    },
+    async getFilters(ctx) {
+        await strapi.PfapiApp.handle(ctx, getFilters);
     },
     async getCount(ctx) {
         await strapi.PfapiApp.handle(ctx, get_count);

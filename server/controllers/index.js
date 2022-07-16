@@ -24,6 +24,10 @@ module.exports = {
       const service = strapi.plugin('pfapi').service('Pfapi');
       await service.aggregateOne(ctx);
     },
+    async getFilters(ctx) {
+      const service = strapi.plugin('pfapi').service('Pfapi');
+      await service.getFilters(ctx);
+    },
     // for development and debug
     async handleCacheRequest(ctx) {
       const service = strapi.plugin('pfapi').service('Pfapi');

@@ -3,11 +3,14 @@
 const { Composite, get_pagination, logging } = require('./');
 
 const find_many = require('./find-many');
+const get_filters = require('./get-filters');
 const get_count = require('./get-count');
 const run_ejs = require('./run-ejs');
 
 class AggregateMany extends Composite {
 
+    filters = get_filters;
+    
     items = find_many;
 
     total = get_count;

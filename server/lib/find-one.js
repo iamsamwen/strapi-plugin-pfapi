@@ -1,19 +1,21 @@
 'use strict';
 
-const { Refreshable, logging } = require('./');
+const { Refreshable, logging, run_group_by } = require('./');
 
 class FindOne extends Refreshable {
 
     reduce(params) {
         logging.debug('FindOne reduce', params);
-        const {uid, fields, filters, populate, delay} = params;
-        return {uid, fields, filters, populate, delay, limit: 1}
+        const {uid, fields, filters, populate, sort, groupBy, publicationState, locale, delay} = params;
+        return {uid, fields, filters, populate, sort, groupBy, publicationState, locale, limit: 1, delay}
     }
 
-    async get_data({uid, id, delay, ...params}) {
+    async get_data({uid, groupBy, delay, ...params}) {
         logging.debug('FindOne get_data', uid, params);
         if (!uid) return null;
-        let data = await strapi.entityService.findMany(uid, params);
+        let data = groupBy ? 
+            await run_group_by(uid, groupBy, params) : 
+            await strapi.entityService.findMany(uid, params);
         if (data.length === 0) return null;
         data = data[0];
         const dependencies = [{uid, id: data.id}];
