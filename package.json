@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "description": "Pfapi plugin provides configurable, secure and fast API services.",
   "strapi": {
     "name": "pfapi",
@@ -45,7 +45,7 @@
     }
   ],
   "dependencies": {
-    "@iamsamwen/strapi-query-helpers": "^1.0.1",
+    "@iamsamwen/strapi-query-helpers": "^1.0.2",
     "ejs": "^3.1.8",
     "fs-extra": "^10.1.0",
     "lru-cache": "^7.12.0",
