@@ -55,7 +55,7 @@ In additional, groupBy is supported.
 
 ## Configurable Filters
 
-filters provide overview of the searched data, the filters data is used to build user-friendly interface to help users to refine their searches.
+filters provide an overview of the searched data, the filters data is used to build the user-friendly interface. It helps users to refine their searches.
 
 Here is an example:
 
@@ -70,9 +70,7 @@ http://localhost:1337/pfapi/pf/northern-cities?groupBy=iso3&sort[population]=des
     {
       key: 'lat', type: 'range', title: 'Latitude', min: 60.02, max: 81.72, count: 595, full_set: true
     },
-    {
-      key: 'lng', type: 'range', title: 'Latitude', min: -179.59, max: 179.31, count: 595, full_set: true
-    },
+  ...
     {
       key: 'population', type: 'range', min: 0, max: 642045, count: 595, full_set: true
     },
