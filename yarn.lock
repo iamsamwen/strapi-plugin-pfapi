@@ -2,12 +2,13 @@
 # yarn lockfile v1
 
 
-"@iamsamwen/strapi-query-helpers@^1.0.6":
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/@iamsamwen/strapi-query-helpers/-/strapi-query-helpers-1.0.6.tgz#d77080e9006d0b33779c3060923ca69d514f251f"
-  integrity sha512-EGz4fDkXbNg+vaOOsdDIsHYBJz3I49HSLvQRnGoqm/pECnYUXKNfx9fFm/Yulg+dhgM/0u186n9sgwBg+PmhMA==
+"@iamsamwen/strapi-query-helpers@^1.0.8":
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/@iamsamwen/strapi-query-helpers/-/strapi-query-helpers-1.0.8.tgz#eed20aacbb2d4422f59b741d64a50e0573e948d8"
+  integrity sha512-aGhz68hXLRGv1ZLveJJhgGiFIUW10MJxA4Xj1B7v53cpm57ISPIfM8VHSAGTcPiP7YXjv108pCCjBgi/1EHL+Q==
   dependencies:
     change-case "^4.1.2"
+    debug "^4.3.4"
     lodash "^4.17.21"
 
 "@ioredis/commands@^1.1.1":
