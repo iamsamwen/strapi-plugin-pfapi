@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-pfapi",
-  "version": "2.2.3",
+  "version": "2.2.5",
   "description": "Pfapi plugin provides configurable, secure and fast API services.",
   "strapi": {
     "name": "pfapi",
@@ -34,6 +34,8 @@
     "limit",
     "throttle",
     "activity",
+    "filters",
+    "group",
     "log",
     "time",
     "ejs",
