@@ -6,8 +6,13 @@ class GetFilters extends Refreshable {
 
     reduce(params) {
         logging.debug('GetFilters reduce', params);
-        const {uid, fields, filters, sort, populate, publicationState, locale, filters_config, delay} = params;
-        return {uid, fields, filters, sort, populate, publicationState, locale, filters_config, delay}
+        const {uid, fields, filters, sort, populate, publicationState, locale, delay} = params;
+        // merge_filters === false allows filters generated based only on config filters
+        let merge_filters = false;
+        if (params.merge_filters === true || params.merge_filters === '1' || params.merge_filters === 'true') {
+            merge_filters = true;
+        }
+        return {uid, fields, filters, sort, populate, publicationState, locale, merge_filters, delay}
     }
 
     async get_data(params) {
