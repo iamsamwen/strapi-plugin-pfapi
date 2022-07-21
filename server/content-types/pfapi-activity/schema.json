@@ -43,6 +43,9 @@
     "cache_key": {
       "type": "string"
     },
+    "preview": {
+      "type": "boolean"
+    },
     "ss_rand": {
       "type": "boolean"
     },

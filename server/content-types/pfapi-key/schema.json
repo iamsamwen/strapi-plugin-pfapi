@@ -21,10 +21,13 @@
     "name": {
       "type": "string"
     },
+    "allow_preview": {
+      "type": "boolean",
+      "default": true
+    },
     "blocked": {
       "type": "boolean",
-      "default": false,
-      "configurable": false
+      "default": false
     },
     "comment": {
       "type": "string"
