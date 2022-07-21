@@ -354,10 +354,10 @@ standard-as-callback@^2.1.0:
   resolved "https://registry.yarnpkg.com/standard-as-callback/-/standard-as-callback-2.1.0.tgz#8953fc05359868a77b5b9739a665c5977bb7df45"
   integrity sha512-qoRRSyROncaz1z0mvYqIE4lCd9p2R90i6GxW3uZv5ucSu8tU7B5HXUP1gG8pVZsYNVaXjk8ClXHPttLyxAL48A==
 
-strapi-pfapi@^2.2.8:
-  version "2.2.8"
-  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-2.2.8.tgz#4c3923d00ea115758285aca49b6ea762f43d2a67"
-  integrity sha512-Glv2nECJQtVxM9tW5yCwouloTb26xw26wrIClI8BysKT+t05aA9m2/54549X9oaxw3b6Vf3fXj3wV/rDSWh6xQ==
+strapi-pfapi@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/strapi-pfapi/-/strapi-pfapi-2.3.0.tgz#0e1c9eeea727347bda4a7a23211ffb23b6365afd"
+  integrity sha512-qWIK7Ti0r4GCo5iHNhHH4iTQ4e/2il44B3EGMOvO4Fy2v2a0N7nsJOOr0Ke+pqHazn6H25EbYSh9hmMD2D5BSg==
   dependencies:
     base-x "4.0.0"
     debug "^4.3.4"
