@@ -1,6 +1,7 @@
 'use strict';
 
 const { Refreshable, get_start_limit, logging, run_group_by } = require('./');
+const set_default_publish = require('./default-publish');
 
 class FindMany extends Refreshable {
 
@@ -14,9 +15,13 @@ class FindMany extends Refreshable {
     async get_data({uid, groupBy, delay, ...params}) {
         logging.debug('FindMany get_data', params);
         if (!uid) return null;
-        const data = groupBy ? 
-            await run_group_by(uid, groupBy, params) : 
-            await strapi.entityService.findMany(uid, params);
+        let data;
+        if (groupBy) { 
+            data = await run_group_by(uid, groupBy, params);
+        } else {
+            set_default_publish(uid, params);
+            data = await strapi.entityService.findMany(uid, params);
+        }
         const dependencies = [];
         for (const {id} of data) {
             dependencies.push({uid, id});
