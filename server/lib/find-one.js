@@ -8,7 +8,7 @@ class FindOne extends Refreshable {
     reduce(params) {
         logging.debug('FindOne reduce', params);
         const {uid, fields, filters, populate, sort, groupBy, publicationState, locale, delay} = params;
-        return {uid, fields, filters, populate, sort, groupBy, publicationState, locale, limit: 1, delay}
+        return {uid, fields, filters, populate, sort, groupBy, publicationState, locale, delay, limit: 1}
     }
 
     async get_data({uid, groupBy, delay, ...params}) {
