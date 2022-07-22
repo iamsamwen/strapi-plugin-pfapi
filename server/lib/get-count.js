@@ -1,6 +1,7 @@
 'use strict';
 
 const { Refreshable, logging, run_group_by_count } = require('./');
+const set_default_publish = require('./default-publish');
 
 class GetCount extends Refreshable {
 
@@ -13,9 +14,13 @@ class GetCount extends Refreshable {
     async get_data({uid, groupBy, delay, ...params}) {
         logging.debug('GetCount get_data', uid, params);
         if (!uid) return null;
-        const data = groupBy ? 
-            await run_group_by_count(uid, groupBy, params) :
-            await strapi.entityService.count(uid, params);
+        let data;
+        if (groupBy) {
+            data = await run_group_by_count(uid, groupBy, params);
+        } else {
+            set_default_publish(uid, params);
+            data = await strapi.entityService.count(uid, params);
+        }
         const dependencies = [{uid}];
         if (delay) {
             await new Promise(resolve => setTimeout(resolve, delay));
